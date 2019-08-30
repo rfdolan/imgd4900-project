@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Camera looking based off of http://holistic3d.com/tutorials/?ytid=blO039OzUZc
 public class CamMouseLook : MonoBehaviour
 {
     Vector2 mouseLook;

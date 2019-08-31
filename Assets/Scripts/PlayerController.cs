@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Haha I'm ignoring the lock
 // Movement based off of http://holistic3d.com/tutorials/?ytid=blO039OzUZc
 public class PlayerController : MonoBehaviour
 {

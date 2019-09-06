@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DimensionSwap : MonoBehaviour
 {
-    //will hold the objects that belong to each dimension 
-    public GameObject[] humanObjects;
-    public GameObject[] otherObjects;
+    //will hold the objects that belong to each dimension (as their children)
+    public GameObject humanObjects;
+    public GameObject otherObjects;
 
     // Start is called before the first frame update
     void Start()

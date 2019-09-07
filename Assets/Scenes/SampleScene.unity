@@ -212,7 +212,6 @@ GameObject:
   - component: {fileID: 342068250}
   - component: {fileID: 342068249}
   - component: {fileID: 342068248}
-  - component: {fileID: 342068247}
   - component: {fileID: 342068246}
   m_Layer: 0
   m_Name: Activator (1)
@@ -233,19 +232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569b4a58f1ac94f82bbc2d302f7d6ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &342068247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342068245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70a4800bbeb72034985fee15a4ade1f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onHand: {fileID: 598340856}
 --- !u!135 &342068248
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -452,7 +438,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598340855}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.1, z: 1.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1116015591}
@@ -590,7 +576,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 9.01e-43, y: NaN, z: 9.01e-43, w: -46257.438}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 4e-45}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -829,7 +815,6 @@ GameObject:
   - component: {fileID: 852513734}
   - component: {fileID: 852513737}
   - component: {fileID: 852513739}
-  - component: {fileID: 852513738}
   - component: {fileID: 852513733}
   m_Layer: 0
   m_Name: Activator
@@ -927,19 +912,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &852513738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852513732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70a4800bbeb72034985fee15a4ade1f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onHand: {fileID: 598340856}
 --- !u!135 &852513739
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1160,6 +1132,7 @@ GameObject:
   - component: {fileID: 1116015593}
   - component: {fileID: 1116015594}
   - component: {fileID: 1116015595}
+  - component: {fileID: 1116015596}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1386,6 +1359,20 @@ MonoBehaviour:
   - {fileID: 1833211012}
   otherObjects:
   - {fileID: 1299768472}
+--- !u!114 &1116015596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116015587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a4800bbeb72034985fee15a4ade1f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onHand: {fileID: 598340856}
+  camera: {fileID: 963194227}
 --- !u!1 &1137602291
 GameObject:
   m_ObjectHideFlags: 0

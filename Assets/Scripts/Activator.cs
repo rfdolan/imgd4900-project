@@ -23,7 +23,7 @@ public class Activator : MonoBehaviour
     {
         if (enter)
         {
-            Debug.Log("activating");
+            //Debug.Log("activating");
         }
     }
 
@@ -31,7 +31,7 @@ public class Activator : MonoBehaviour
     {
         if (exit)
         {
-            Debug.Log("deactivating");
+            //Debug.Log("deactivating");
         }
     }
 

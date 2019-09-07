@@ -13,15 +13,38 @@ public class Pickup : MonoBehaviour
     public Transform onHand;
     private Rigidbody rigidbody;
     private bool isHeld = false;
+    public Camera camera;
+    private ScriptName dimensionScript;
     //private MeshRenderer mesh;
 
     void Start() 
     {
         rigidbody = GetComponent<Rigidbody>();
+        dimensionScript = gameObject.GetComponent<DimensionSwap>();
         //mesh = GetComponent<MeshRenderer>();
     }
 
+    void Update()
+    {
+        RaycastHit hit;
+        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        if(Input.GetKeyDown("e"))
+        {
+            if (Physics.Raycast(ray, out hit)) {
+                Transform objectHit = hit.transform;
+                if(objectHit.tag == "Liftable")
+                {
+
+                    Debug.Log("We hit "+ objectHit);
+                    //objectHit.parent = GetComponent<GameObject>();
+                }
+            }
+        }
+    }
+
+/*
     void OnMouseDown() {
+        Debug.Log("We clicked");
         isHeld = !isHeld;
         if(isHeld)
         {
@@ -29,14 +52,17 @@ public class Pickup : MonoBehaviour
             rigidbody.constraints = RigidbodyConstraints.FreezeAll;
             this.transform.position = onHand.transform.position;
             this.transform.parent = GameObject.Find("Player").transform;
+            Debug.Log("isHeld is true, so we just picked up");
         }
         else
         {
             this.transform.parent = null;
             rigidbody.useGravity = true;
             rigidbody.constraints = RigidbodyConstraints.None;
+            Debug.Log("isHeld is false, so we should put down");
 
         }
 
     }
+    */
 }

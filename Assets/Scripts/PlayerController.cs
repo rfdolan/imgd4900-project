@@ -12,9 +12,9 @@ public class PlayerController : MonoBehaviour
 
     DimensionSwap dimensionScript; 
     public int dimension; //1 = we are in the human dimension, -1 = we are in the other (ghost/fae)
-    //get list of object fore each dimension 
-    GameObject[] forHuman;
-    GameObject[] forOther;
+    //parent of list of objects for each dimension 
+    Transform forHuman;
+    Transform forOther;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +26,8 @@ public class PlayerController : MonoBehaviour
         dimension = 1; //we start in the humna dimension
 
         //load human dimension first 
-        forHuman = dimensionScript.humanObjects;
-        forOther = dimensionScript.otherObjects;
+        forHuman = dimensionScript.humanObjects.GetComponentInChildren<Transform>();
+        forOther = dimensionScript.otherObjects.GetComponentInChildren<Transform>();
         ActivateDim(forHuman);
         DeactivateDim(forOther);
     }
@@ -58,8 +58,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //get list of game objects for each dimension
-            forHuman = dimensionScript.humanObjects;
-            forOther = dimensionScript.otherObjects;
+            forHuman = dimensionScript.humanObjects.GetComponentInChildren<Transform>();
+            forOther = dimensionScript.otherObjects.GetComponentInChildren<Transform>();
 
             //Change dimension
             dimension *= -1;
@@ -80,22 +80,22 @@ public class PlayerController : MonoBehaviour
     }
 
     ///Activate all Game Objects in specified dimension.
-    /// <param name="list">List of game objects we want to activate</param>
-    void ActivateDim(GameObject[] list)
+    /// <param name="obj">Parent of list of objects in a dimension</param>
+    void ActivateDim(Transform obj)
     {
-        for(int i = 0; i < list.Length; i++)
+        foreach(Transform child in obj) //get all the children of the object
         {
-            list[i].SetActive(true);
+            child.gameObject.SetActive(true);
         }
     }
 
     ///Deactivates all Game Objects in specified dimension.
-    ///<param name= "list">List of game objects we want to deactivate</param>
-    void DeactivateDim(GameObject[] list)
+    /// <param name="obj">Parent of list of objects in a dimension</param>
+    void DeactivateDim(Transform obj)
     {
-        for(int i = 0; i < list.Length; i++)
+        foreach (Transform child in obj) //get all the children of the object
         {
-            list[i].SetActive(false);
+            child.gameObject.SetActive(false);
         }
     }
 }

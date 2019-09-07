@@ -14,14 +14,15 @@ public class Pickup : MonoBehaviour
     private Rigidbody rigidbody;
     private bool isHeld = false;
     public Camera camera;
-    private ScriptName dimensionScript;
+    private PlayerController dimensionScript;
+    private bool handsFull;
     //private MeshRenderer mesh;
 
     void Start() 
     {
-        rigidbody = GetComponent<Rigidbody>();
-        dimensionScript = gameObject.GetComponent<DimensionSwap>();
+        dimensionScript = gameObject.GetComponent<PlayerController>();
         //mesh = GetComponent<MeshRenderer>();
+        handsFull = false;
     }
 
     void Update()
@@ -34,7 +35,35 @@ public class Pickup : MonoBehaviour
                 Transform objectHit = hit.transform;
                 if(objectHit.tag == "Liftable")
                 {
+                    
 
+                    GameObject obj = objectHit.gameObject;
+                    rigidbody = obj.GetComponent<Rigidbody>();
+                    if(!handsFull)
+                    {
+                        Debug.Log("I am going to pick this up");
+                        rigidbody.useGravity = false;
+                        rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+                        objectHit.position = onHand.transform.position;
+                        objectHit.parent = this.transform;
+                    }
+                    else
+                    {
+                        Debug.Log("I am putting this down");
+                        if(dimensionScript.dimension == 1)
+                        {
+                            objectHit.parent = GameObject.FindWithTag("HumanDim").GetComponent<Transform>();
+                        }
+                        else
+                        {
+                            objectHit.parent = GameObject.FindWithTag("OtherDim").GetComponent<Transform>();
+
+                        }
+                        rigidbody.useGravity = true;
+                        rigidbody.constraints = RigidbodyConstraints.None;
+
+                    }
+                    handsFull = !handsFull;
                     Debug.Log("We hit "+ objectHit);
                     //objectHit.parent = GetComponent<GameObject>();
                 }

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Liftable
+  - HumanDim
+  - OtherDim
   layers:
   - Default
   - TransparentFX

@@ -20,7 +20,6 @@ public class Pickup : MonoBehaviour
     {
         dimensionScript = gameObject.GetComponent<PlayerController>();
         handsFull = false;
-        cam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
     }
 
     void Update()
@@ -33,7 +32,7 @@ public class Pickup : MonoBehaviour
             // See if it hit. To change the range, change the last number.
             if (Physics.Raycast(ray, out hit, 2)) {
                 Transform objectHit = hit.transform;
-                Debug.Log("We hit "+ objectHit);
+                //Debug.Log("We hit "+ objectHit);
                 if(objectHit.tag == "Liftable")
                 {
                     GameObject obj = objectHit.gameObject;
@@ -41,7 +40,7 @@ public class Pickup : MonoBehaviour
                     // If we are not carrying anything, pick the item up.
                     if(!handsFull)
                     {
-                        Debug.Log("I am going to pick this up");
+                        //Debug.Log("I am going to pick this up");
                         rb.useGravity = false;
                         rb.constraints = RigidbodyConstraints.FreezeAll;
                         objectHit.position = onHand.transform.position;
@@ -50,7 +49,7 @@ public class Pickup : MonoBehaviour
                     // We are carrying something, which is what we hit. So put it down.
                     else
                     {
-                        Debug.Log("I am putting this down");
+                        //Debug.Log("I am putting this down");
                         // When we put it down make it a part of the dimension that we put it down in.
                         if(dimensionScript.dimension == 1)
                         {

@@ -15,6 +15,7 @@ public class Pickup : MonoBehaviour
     public Camera cam;
     private PlayerController dimensionScript;
     private bool handsFull;
+    private GameObject objHolding;
 
     void Start() 
     {
@@ -29,45 +30,56 @@ public class Pickup : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         if(Input.GetKeyDown("e"))
         {
+            if(handsFull)
+            {
+                dropObject();
+
+            }
             // See if it hit. To change the range, change the last number.
-            if (Physics.Raycast(ray, out hit, 2)) {
+            else if (Physics.Raycast(ray, out hit, 2)) {
                 Transform objectHit = hit.transform;
                 //Debug.Log("We hit "+ objectHit);
                 if(objectHit.tag == "Liftable")
                 {
-                    GameObject obj = objectHit.gameObject;
-                    rb = obj.GetComponent<Rigidbody>();
-                    // If we are not carrying anything, pick the item up.
-                    if(!handsFull)
-                    {
-                        //Debug.Log("I am going to pick this up");
-                        rb.useGravity = false;
-                        rb.constraints = RigidbodyConstraints.FreezeAll;
-                        objectHit.position = onHand.transform.position;
-                        objectHit.parent = this.transform;
-                    }
+                    liftObject(objectHit);
                     // We are carrying something, which is what we hit. So put it down.
-                    else
-                    {
-                        //Debug.Log("I am putting this down");
-                        // When we put it down make it a part of the dimension that we put it down in.
-                        if(dimensionScript.dimension == 1)
-                        {
-                            objectHit.parent = GameObject.FindWithTag("HumanDim").GetComponent<Transform>();
-                        }
-                        else
-                        {
-                            objectHit.parent = GameObject.FindWithTag("OtherDim").GetComponent<Transform>();
-
-                        }
-                        rb.useGravity = true;
-                        rb.constraints = RigidbodyConstraints.None;
-
-                    }
-                    // Change how full out hands are.
-                    handsFull = !handsFull;
                 }
             }
         }
+    }
+
+    private void liftObject(Transform objHit)
+    {
+        objHolding = objHit.gameObject;
+        rb = objHolding.GetComponent<Rigidbody>();
+        // If we are not carrying anything, pick the item up.
+        if(!handsFull)
+        {
+            //Debug.Log("I am going to pick this up");
+            rb.useGravity = false;
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+            objHit.position = onHand.transform.position;
+            objHit.parent = this.transform;
+        }
+        handsFull = !handsFull;
+
+    }
+
+    private void dropObject()
+    {
+        if(dimensionScript.dimension == 1)
+        {
+            objHolding.GetComponent<Transform>().parent = GameObject.FindWithTag("HumanDim").GetComponent<Transform>();
+        }
+        else
+        {
+            objHolding.GetComponent<Transform>().parent = GameObject.FindWithTag("OtherDim").GetComponent<Transform>();
+
+        }
+        rb.useGravity = true;
+        rb.constraints = RigidbodyConstraints.None;
+        handsFull = !handsFull;
+        objHolding = null;
+
     }
 }

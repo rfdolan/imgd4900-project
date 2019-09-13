@@ -33,7 +33,7 @@ public class Pickup : MonoBehaviour
             if(handsFull)
             {
                 dropObject();
-
+                return;
             }
             // See if it hit. To change the range, change the last number.
             else if (Physics.Raycast(ray, out hit, 2)) {

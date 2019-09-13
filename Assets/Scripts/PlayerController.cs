@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 10.0f;
     private AudioSource footfall;
     public bool isWalking = false;
+    Vector3 playerHeight;
 
     DimensionSwap dimensionScript; 
     public int dimension; //1 = we are in the human dimension, -1 = we are in the other (ghost/fae)
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerHeight = transform.position;
         Cursor.lockState = CursorLockMode.Locked;
         footfall = GetComponent<AudioSource>();
 
@@ -43,11 +45,20 @@ public class PlayerController : MonoBehaviour
         {
             footfall.volume = 0.0f;
         }
-        float translation = Input.GetAxis("Vertical") * speed;
-        float straffe = Input.GetAxis("Horizontal") * speed;
-        translation *= Time.deltaTime;
-        straffe *= Time.deltaTime;
-        transform.Translate(straffe, 0, translation);
+
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
+        move = move * Time.deltaTime * speed;
+        //transform.translate(move);
+        gameObject.GetComponent<CharacterController>().Move(transform.TransformDirection(move));
+        playerHeight = transform.position;
+        playerHeight.y = Mathf.Clamp(playerHeight.y,1.0f,1.0f);
+        transform.position = playerHeight;
+
+        //float translation = Input.GetAxis("Vertical") * speed;
+        //float straffe = Input.GetAxis("Horizontal") * speed;
+        //translation *= Time.deltaTime;
+        //straffe *= Time.deltaTime;
+        //transform.Translate(straffe, 0, translation);
         
         if(Input.GetKeyDown("escape"))
         {
@@ -98,4 +109,20 @@ public class PlayerController : MonoBehaviour
             child.gameObject.SetActive(false);
         }
     }
+
+    float pushPower = 4.0f;
+    void OnControllerColliderHit(ControllerColliderHit hit) {
+        Rigidbody body = hit.collider.attachedRigidbody;
+
+        if (body == null || body.isKinematic) {
+            return;
+        }
+        if (hit.moveDirection.y < -0.3) {
+            return;
+        }
+
+        Vector3 poushDir = new Vector3(hit.moveDirection.x,0,hit.moveDirection.z);
+        body.velocity = poushDir * pushPower;
+    }
 }
+

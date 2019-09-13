@@ -22,7 +22,6 @@ public class Pickup : MonoBehaviour
         dimensionScript = gameObject.GetComponent<PlayerController>();
         handsFull = false;
     }
-
     void Update()
     {
         // Create the ray and raycast that we are going to use

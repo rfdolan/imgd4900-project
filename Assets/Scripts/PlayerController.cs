@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         //transform.translate(move);
         gameObject.GetComponent<CharacterController>().Move(transform.TransformDirection(move));
         playerHeight = transform.position;
-        playerHeight.y = Mathf.Clamp(playerHeight.y,1.0f,1.0f);
+        playerHeight.y = Mathf.Clamp(playerHeight.y,1.05f,1.05f);
         transform.position = playerHeight;
 
         //float translation = Input.GetAxis("Vertical") * speed;

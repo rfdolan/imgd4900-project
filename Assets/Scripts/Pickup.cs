@@ -16,6 +16,7 @@ public class Pickup : MonoBehaviour
     private PlayerController dimensionScript;
     private bool handsFull;
     private GameObject objHolding;
+    private bool allowedToDrop;
 
     void Start() 
     {
@@ -29,7 +30,7 @@ public class Pickup : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         if(Input.GetKeyDown("e"))
         {
-            if(handsFull)
+            if(handsFull && allowedToDrop)
             {
                 dropObject();
                 return;
@@ -41,8 +42,32 @@ public class Pickup : MonoBehaviour
                 if(objectHit.tag == "Liftable")
                 {
                     liftObject(objectHit);
-                    // We are carrying something, which is what we hit. So put it down.
                 }
+            }
+        }
+        //TODO make this less janky when I'm fresh
+        if(handsFull)
+        {
+            // If we hit something within holding distance that isn't the object, then we want it to freeze.
+            if(Physics.Raycast(ray, out hit, 2) && (hit.transform != objHolding.GetComponent<Transform>()))
+            {
+                rb = objHolding.GetComponent<Rigidbody>();
+                //rb.useGravity = false;
+                // It no longer sticks to the holder.
+                objHolding.GetComponent<Transform>().parent = null;
+                // It just floats in mid air until we change it.
+                rb.constraints = RigidbodyConstraints.FreezeAll;
+                // The player is not allowed to drop the object since they can't see it (it could be out of bounds).
+                allowedToDrop = false;
+            }
+            else
+            {
+                rb = objHolding.GetComponent<Rigidbody>();
+                objHolding.GetComponent<Transform>().position = onHand.transform.position;
+                objHolding.GetComponent<Transform>().parent = this.transform;
+                rb.constraints = RigidbodyConstraints.FreezeRotation;
+                // Let them drop it. because they can definitely see it.
+                allowedToDrop = true;
             }
         }
     }
@@ -56,12 +81,11 @@ public class Pickup : MonoBehaviour
         {
             //Debug.Log("I am going to pick this up");
             rb.useGravity = false;
-            rb.constraints = RigidbodyConstraints.FreezeAll;
+            //rb.constraints = RigidbodyConstraints.FreezeAll;
             objHit.position = onHand.transform.position;
             objHit.parent = this.transform;
         }
         handsFull = !handsFull;
-
     }
 
     private void dropObject()

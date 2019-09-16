@@ -10,15 +10,12 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
 
-    public Transform onHand;
-    public Rigidbody rbOnHand;
     public Camera cam;
     public Material highlightMat;
     private Rigidbody rb;
     private PlayerController dimensionScript;
     private bool handsFull;
     private GameObject objHolding;
-    private bool allowedToDrop = true;
     private GameObject objectSeen;
     private Material objectSeenMat;
 
@@ -34,7 +31,7 @@ public class Pickup : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         if(Input.GetKeyDown("e"))
         {
-            if(handsFull && allowedToDrop)
+            if(handsFull)
             {
                 dropObject();
                 return;
@@ -49,47 +46,8 @@ public class Pickup : MonoBehaviour
                 }
             }
         }
-        //TODO make this less janky when I'm fresh
-        // One main issue is that our raycast hits the activator range before it hits the activator, which causes problems.
-        // ex highlighting the activator when we're looking at the range and letting us pick it up by the range.
-        if(handsFull)
-        {
-            Transform ourTransform = objHolding.GetComponent<Transform>();
-            
-            // If we hit something within holding distance that isn't the object, then we want it to freeze.
-            if(Physics.Raycast(ray, out hit, 2) && (hit.transform != objHolding.GetComponent<Transform>()))
-            {
-                //rb = objHolding.GetComponent<Rigidbody>();
-                //rb.useGravity = false;
-                // It no longer sticks to the holder.
-                //objHolding.GetComponent<Transform>().parent = null;
-                // It just floats in mid air until we change it.
-                //rb.constraints = RigidbodyConstraints.FreezeAll;
-                // The player is not allowed to drop the object since they can't see it (it could be out of bounds).
-                allowedToDrop = false;
-            }
-            else
-            {
-                //rb = objHolding.GetComponent<Rigidbody>();
-                ourTransform.position = onHand.transform.position;
-                //objHolding.GetComponent<Transform>().parent = this.transform;
-                rb.constraints = RigidbodyConstraints.FreezeRotation;
-                // Let them drop it. because they can definitely see it.
-                allowedToDrop = true;
-            }
-            
-            // Clamp vertical movement
-            if(ourTransform.position.y <= 0.5f)
-            {
-                ourTransform.position = new Vector3(ourTransform.position.x, 0.5f, ourTransform.position.z);
-            }
-            if(ourTransform.position.y >= 2.0f)
-            {
-                ourTransform.position = new Vector3(ourTransform.position.x, 2.0f, ourTransform.position.z);
-            }
-        }
         
-        else
+        if(!handsFull)
         {
             // We are seeing a pick upable object
             if(Physics.Raycast(ray, out hit, 2))
@@ -120,25 +78,31 @@ public class Pickup : MonoBehaviour
 
     private void liftObject(Transform objHit)
     {
+        
         objHolding = objHit.gameObject;
+        
         rb = objHolding.GetComponent<Rigidbody>();
         // If we are not carrying anything, pick the item up.
         if(!handsFull)
         {
-            //Debug.Log("I am going to pick this up");
             rb.useGravity = false;
+            objHolding.GetComponent<BeingHeld>().enabled = true;
+            //Debug.Log("I am going to pick this up");
             //rb.constraints = RigidbodyConstraints.FreezeAll;
-            objHit.position = onHand.position;
-            objHit.parent = this.transform;
+            //objHit.position = onHand.position;
+            //objHit.parent = this.transform;
         }
+        
         handsFull = !handsFull;
     }
 
     public void dropObject()
     {
-        Debug.Log("Drop it mr.");
+        //Debug.Log("Drop it mr);
+        objHolding.GetComponent<BeingHeld>().enabled = false;
         if(dimensionScript.dimension == 1)
         {
+            //Debug.Log(objHolding);
             objHolding.GetComponent<Transform>().parent = GameObject.FindWithTag("HumanDim").GetComponent<Transform>();
         }
         else
@@ -146,8 +110,10 @@ public class Pickup : MonoBehaviour
             objHolding.GetComponent<Transform>().parent = GameObject.FindWithTag("OtherDim").GetComponent<Transform>();
 
         }
+        
         rb.useGravity = true;
-        rb.constraints = RigidbodyConstraints.None;
+        //rb.constraints = RigidbodyConstraints.None;
+        
         handsFull = !handsFull;
         objHolding = null;
 

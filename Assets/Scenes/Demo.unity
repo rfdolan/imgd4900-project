@@ -464,6 +464,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1741967566}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: pickup
+      value: 
+      objectReference: {fileID: 605268841}
     - target: {fileID: 3193409575053464646, guid: b2431fb220a290b42acd53140859f512,
         type: 3}
       propertyPath: m_Name
@@ -535,11 +539,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8554655104631171556, guid: 4302a4c113c63463cb63d16b83986205,
         type: 3}
-    - target: {fileID: 2872831265901266343, guid: b2431fb220a290b42acd53140859f512,
+    - target: {fileID: 3193409575053464664, guid: b2431fb220a290b42acd53140859f512,
         type: 3}
-      propertyPath: pickup
+      propertyPath: m_Material
       value: 
-      objectReference: {fileID: 605268841}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193409575053464665, guid: b2431fb220a290b42acd53140859f512,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193409575053464665, guid: b2431fb220a290b42acd53140859f512,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193409575053464665, guid: b2431fb220a290b42acd53140859f512,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2431fb220a290b42acd53140859f512, type: 3}
 --- !u!4 &784731836 stripped
@@ -1449,8 +1468,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1741967566}
     m_Modifications:
-    - target: {fileID: -584045014777753962, guid: b3bbab1523c32254f9f6dcece63427ed,
+    - target: {fileID: -3000675654035824047, guid: b3bbab1523c32254f9f6dcece63427ed,
         type: 3}
+      propertyPath: hand
+      value: 
+      objectReference: {fileID: 1666646343}
+    - target: {fileID: -3000675654035824047, guid: b3bbab1523c32254f9f6dcece63427ed,
+        type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: pickup
       value: 
       objectReference: {fileID: 605268841}
@@ -1543,6 +1571,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2138202848}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2140293365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3193409575053464646, guid: b2431fb220a290b42acd53140859f512,
+    type: 3}
+  m_PrefabInstance: {fileID: 784731835}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2140293366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140293365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c8257ab39270743a4edbee02eedfec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hand: {fileID: 1666646343}
+  speed: 5
 --- !u!1001 &7568334736372917177
 PrefabInstance:
   m_ObjectHideFlags: 0

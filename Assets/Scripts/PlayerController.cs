@@ -120,6 +120,7 @@ public class PlayerController : MonoBehaviour
         if (hit.moveDirection.y < -0.3) {
             return;
         }
+       
 
         Vector3 poushDir = new Vector3(hit.moveDirection.x,0,hit.moveDirection.z);
         body.velocity = poushDir * pushPower;

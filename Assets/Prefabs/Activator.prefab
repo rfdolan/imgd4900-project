@@ -4847,6 +4847,7 @@ GameObject:
   - component: {fileID: 6059199673235762985}
   - component: {fileID: 6059199673235762983}
   - component: {fileID: 35593848203728418}
+  - component: {fileID: -584045014777753962}
   m_Layer: 0
   m_Name: Activator
   m_TagString: Liftable
@@ -5016,3 +5017,16 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &-584045014777753962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6059199673235762982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c8257ab39270743a4edbee02eedfec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickup: {fileID: 0}

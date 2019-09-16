@@ -445,6 +445,18 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &605268841 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7568334737557767045, guid: f62b91b4bbe5f7044b0d46f71b79f91b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7568334736372917177}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a4800bbeb72034985fee15a4ade1f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &784731835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -521,7 +533,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0bfaa4411d74a2d46ad8956f0e305e28, type: 2}
+      objectReference: {fileID: 8554655104631171556, guid: 4302a4c113c63463cb63d16b83986205,
+        type: 3}
+    - target: {fileID: 2872831265901266343, guid: b2431fb220a290b42acd53140859f512,
+        type: 3}
+      propertyPath: pickup
+      value: 
+      objectReference: {fileID: 605268841}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2431fb220a290b42acd53140859f512, type: 3}
 --- !u!4 &784731836 stripped
@@ -1431,6 +1449,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1741967566}
     m_Modifications:
+    - target: {fileID: -584045014777753962, guid: b3bbab1523c32254f9f6dcece63427ed,
+        type: 3}
+      propertyPath: pickup
+      value: 
+      objectReference: {fileID: 605268841}
     - target: {fileID: 6059199673235762982, guid: b3bbab1523c32254f9f6dcece63427ed,
         type: 3}
       propertyPath: m_Name
@@ -1510,7 +1533,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0bfaa4411d74a2d46ad8956f0e305e28, type: 2}
+      objectReference: {fileID: 8554655104631171556, guid: 4302a4c113c63463cb63d16b83986205,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3bbab1523c32254f9f6dcece63427ed, type: 3}
 --- !u!4 &2138202849 stripped
@@ -1530,6 +1554,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568334737963934462, guid: f62b91b4bbe5f7044b0d46f71b79f91b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568334737963934462, guid: f62b91b4bbe5f7044b0d46f71b79f91b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568334737963934462, guid: f62b91b4bbe5f7044b0d46f71b79f91b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7568334737557767162, guid: f62b91b4bbe5f7044b0d46f71b79f91b,
         type: 3}
@@ -1596,20 +1635,5 @@ PrefabInstance:
       propertyPath: otherObjects
       value: 
       objectReference: {fileID: 1732150867}
-    - target: {fileID: 7568334737963934462, guid: f62b91b4bbe5f7044b0d46f71b79f91b,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7568334737963934462, guid: f62b91b4bbe5f7044b0d46f71b79f91b,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7568334737963934462, guid: f62b91b4bbe5f7044b0d46f71b79f91b,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f62b91b4bbe5f7044b0d46f71b79f91b, type: 3}

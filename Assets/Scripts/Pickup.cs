@@ -80,6 +80,7 @@ public class Pickup : MonoBehaviour
     {
         
         objHolding = objHit.gameObject;
+        objHit.parent = null;
         
         rb = objHolding.GetComponent<Rigidbody>();
         // If we are not carrying anything, pick the item up.

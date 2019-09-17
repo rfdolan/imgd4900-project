@@ -5,12 +5,16 @@ using UnityEngine;
 public class DoorScript : MonoBehaviour
 {
     Animator anim;
+    AudioSource audioData;
+    private bool isOpen;
 
     // Start is called before the first frame update
     void Start()
     {
+        isOpen = false;
         anim = GetComponent<Animator>();
        // anim.enabled = false;
+       audioData = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,10 +28,12 @@ public class DoorScript : MonoBehaviour
     {
         Debug.Log("has collieded");
         //anim.enabled = true;
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !isOpen)
         {
             Debug.Log("collided with player");
             anim.SetTrigger("DoorOpen");
+            audioData.Play(0);
+            isOpen = true;
         }
             // Vector3 move = new Vector3(0.45f, 0.0f, 0.01f);
         //move = move.normalized; //magnitute of 1 

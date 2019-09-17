@@ -12,6 +12,7 @@ public class Pickup : MonoBehaviour
 
     public Camera cam;
     public Material highlightMat;
+    public AudioSource holdingSound;
     private Rigidbody rb;
     private PlayerController dimensionScript;
     private bool handsFull;
@@ -79,6 +80,7 @@ public class Pickup : MonoBehaviour
     private void liftObject(Transform objHit)
     {
         
+        holdingSound.mute = false;
         objHolding = objHit.gameObject;
         objHit.parent = null;
         
@@ -99,6 +101,7 @@ public class Pickup : MonoBehaviour
 
     public void dropObject()
     {
+        holdingSound.mute = true;
         //Debug.Log("Drop it mr);
         objHolding.GetComponent<BeingHeld>().enabled = false;
         if(dimensionScript.dimension == 1)

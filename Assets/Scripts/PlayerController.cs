@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 10.0f;
     private AudioSource footfall;
     public bool isWalking = false;
+    public AudioSource changeSound;
     Vector3 playerHeight;
 
     DimensionSwap dimensionScript; 
@@ -68,6 +69,10 @@ public class PlayerController : MonoBehaviour
         //for changing dimensions 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            if(!changeSound.isPlaying)
+            {
+                changeSound.Play(0);
+            }
             //get list of game objects for each dimension
             forHuman = dimensionScript.humanObjects.GetComponentInChildren<Transform>();
             forOther = dimensionScript.otherObjects.GetComponentInChildren<Transform>();

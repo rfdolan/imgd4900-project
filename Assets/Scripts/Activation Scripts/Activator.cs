@@ -9,6 +9,8 @@ public class Activator : MonoBehaviour
     public Material cubeOffMat;
     public Material cubeOnMat;
 
+    public ActivatorDoor openDoor;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,7 @@ public class Activator : MonoBehaviour
             {
                 case "Activatable Cube":
                     activateCube(ourObject);
+                    
                     break;
                 default:
                     break;
@@ -61,6 +64,8 @@ public class Activator : MonoBehaviour
     private void activateCube(GameObject toActivate)
     {
         toActivate.GetComponent<Renderer>().material = cubeOnMat;
+        openDoor.OpenDoor();
+
 
     }
 

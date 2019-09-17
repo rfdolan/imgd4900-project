@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 10.0f;
     private AudioSource footfall;
     public bool isWalking = false;
+    public AudioSource changeSound;
     Vector3 playerHeight;
 
     DimensionSwap dimensionScript; 
@@ -51,7 +52,7 @@ public class PlayerController : MonoBehaviour
         //transform.translate(move);
         gameObject.GetComponent<CharacterController>().Move(transform.TransformDirection(move));
         playerHeight = transform.position;
-        playerHeight.y = Mathf.Clamp(playerHeight.y,1.0f,1.0f);
+        playerHeight.y = Mathf.Clamp(playerHeight.y,1.05f,1.05f);
         transform.position = playerHeight;
 
         //float translation = Input.GetAxis("Vertical") * speed;
@@ -68,6 +69,10 @@ public class PlayerController : MonoBehaviour
         //for changing dimensions 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            if(!changeSound.isPlaying)
+            {
+                changeSound.Play(0);
+            }
             //get list of game objects for each dimension
             forHuman = dimensionScript.humanObjects.GetComponentInChildren<Transform>();
             forOther = dimensionScript.otherObjects.GetComponentInChildren<Transform>();
@@ -120,6 +125,7 @@ public class PlayerController : MonoBehaviour
         if (hit.moveDirection.y < -0.3) {
             return;
         }
+       
 
         Vector3 poushDir = new Vector3(hit.moveDirection.x,0,hit.moveDirection.z);
         body.velocity = poushDir * pushPower;

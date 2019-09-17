@@ -10,19 +10,21 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
 
-    public Transform onHand;
-    private Rigidbody rb;
     public Camera cam;
+    public Material highlightMat;
+    public AudioSource holdingSound;
+    private Rigidbody rb;
     private PlayerController dimensionScript;
     private bool handsFull;
     private GameObject objHolding;
+    private GameObject objectSeen;
+    private Material objectSeenMat;
 
     void Start() 
     {
         dimensionScript = gameObject.GetComponent<PlayerController>();
         handsFull = false;
     }
-
     void Update()
     {
         // Create the ray and raycast that we are going to use
@@ -33,7 +35,7 @@ public class Pickup : MonoBehaviour
             if(handsFull)
             {
                 dropObject();
-
+                return;
             }
             // See if it hit. To change the range, change the last number.
             else if (Physics.Raycast(ray, out hit, 2)) {
@@ -42,33 +44,69 @@ public class Pickup : MonoBehaviour
                 if(objectHit.tag == "Liftable")
                 {
                     liftObject(objectHit);
-                    // We are carrying something, which is what we hit. So put it down.
                 }
+            }
+        }
+        
+        if(!handsFull)
+        {
+            // We are seeing a pick upable object
+            if(Physics.Raycast(ray, out hit, 2))
+            {
+                Transform objectHit = hit.transform;
+                if(objectHit.tag == "Liftable")
+                {
+                    //Debug.Log("Highlight");
+                    // Store the object and it's material so we can change it back when we stop looking.
+                    objectSeen = objectHit.gameObject;
+                    if(!objectSeen.GetComponent<Renderer>().material.name.Contains(highlightMat.name))
+                    {
+                        objectSeenMat = objectSeen.GetComponent<Renderer>().material;
+                    }
+                    objectSeen.GetComponent<Renderer>().material = highlightMat;
+                }
+            }
+            // If we just stopped looking at something, unhighlight.
+            else if(objectSeen != null)
+            {
+                //Debug.Log("Un-Highlight");
+                objectSeen.GetComponent<Renderer>().material = objectSeenMat;
+                objectSeen = null;
+                objectSeenMat = null;
             }
         }
     }
 
     private void liftObject(Transform objHit)
     {
+        
+        holdingSound.mute = false;
         objHolding = objHit.gameObject;
+        objHit.parent = null;
+        
         rb = objHolding.GetComponent<Rigidbody>();
         // If we are not carrying anything, pick the item up.
         if(!handsFull)
         {
-            //Debug.Log("I am going to pick this up");
             rb.useGravity = false;
-            rb.constraints = RigidbodyConstraints.FreezeAll;
-            objHit.position = onHand.transform.position;
-            objHit.parent = this.transform;
+            objHolding.GetComponent<BeingHeld>().enabled = true;
+            //Debug.Log("I am going to pick this up");
+            //rb.constraints = RigidbodyConstraints.FreezeAll;
+            //objHit.position = onHand.position;
+            //objHit.parent = this.transform;
         }
+        
         handsFull = !handsFull;
-
     }
 
-    private void dropObject()
+    public void dropObject()
     {
+        holdingSound.mute = true;
+        //Debug.Log("Drop it mr);
+        objHolding.GetComponent<BeingHeld>().enabled = false;
         if(dimensionScript.dimension == 1)
         {
+            //Debug.Log(objHolding);
             objHolding.GetComponent<Transform>().parent = GameObject.FindWithTag("HumanDim").GetComponent<Transform>();
         }
         else
@@ -76,8 +114,10 @@ public class Pickup : MonoBehaviour
             objHolding.GetComponent<Transform>().parent = GameObject.FindWithTag("OtherDim").GetComponent<Transform>();
 
         }
+        
         rb.useGravity = true;
-        rb.constraints = RigidbodyConstraints.None;
+        //rb.constraints = RigidbodyConstraints.None;
+        
         handsFull = !handsFull;
         objHolding = null;
 

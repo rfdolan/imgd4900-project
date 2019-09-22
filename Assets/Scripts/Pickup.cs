@@ -15,10 +15,10 @@ public class Pickup : MonoBehaviour
     public AudioSource holdingSound;
     private Rigidbody rb;
     private PlayerController dimensionScript;
-    private bool handsFull;
-    private GameObject objHolding;
-    private GameObject objectSeen;
-    private Material objectSeenMat;
+    public bool handsFull;
+    private GameObject objectSeen = null;
+    private Material objectSeenMat = null;
+    public Transform heldTransform;
 
     void Start() 
     {
@@ -30,6 +30,7 @@ public class Pickup : MonoBehaviour
         // Create the ray and raycast that we are going to use
         RaycastHit hit;
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        Ray highlightRay = cam.ScreenPointToRay(Input.mousePosition);
         if(Input.GetKeyDown("e"))
         {
             if(handsFull)
@@ -41,7 +42,7 @@ public class Pickup : MonoBehaviour
             else if (Physics.Raycast(ray, out hit, 2)) {
                 Transform objectHit = hit.transform;
                 //Debug.Log("We hit "+ objectHit);
-                if(objectHit.tag == "Liftable")
+                if(objectHit.tag == "Liftable" || objectHit.tag == "Non-Transferrable")
                 {
                     liftObject(objectHit);
                 }
@@ -50,46 +51,56 @@ public class Pickup : MonoBehaviour
         
         if(!handsFull)
         {
+            //Debug.Log("There is nothing in my hands.");
             // We are seeing a pick upable object
-            if(Physics.Raycast(ray, out hit, 2))
+            if(Physics.Raycast(highlightRay, out hit, 2) && ((hit.transform.tag == "Liftable" ) || (hit.transform.tag == "Non-Transferrable")))
             {
-                Transform objectHit = hit.transform;
-                if(objectHit.tag == "Liftable")
+                if(objectSeen == null)
                 {
                     //Debug.Log("Highlight");
                     // Store the object and it's material so we can change it back when we stop looking.
-                    objectSeen = objectHit.gameObject;
-                    if(!objectSeen.GetComponent<Renderer>().material.name.Contains(highlightMat.name))
-                    {
-                        objectSeenMat = objectSeen.GetComponent<Renderer>().material;
-                    }
-                    objectSeen.GetComponent<Renderer>().material = highlightMat;
+                    objectSeen = hit.transform.gameObject;
+                    Highlight();
                 }
             }
             // If we just stopped looking at something, unhighlight.
             else if(objectSeen != null)
             {
                 //Debug.Log("Un-Highlight");
-                objectSeen.GetComponent<Renderer>().material = objectSeenMat;
-                objectSeen = null;
-                objectSeenMat = null;
+                UnHighlight();
             }
         }
     }
 
+    private void Highlight()
+    {
+        if(!objectSeen.GetComponent<Renderer>().material.name.Contains(highlightMat.name))
+        {
+            objectSeenMat = objectSeen.GetComponent<Renderer>().material;
+        }
+        objectSeen.GetComponent<Renderer>().material = highlightMat;
+
+    }
+
+    private void UnHighlight()
+    {
+        objectSeen.GetComponent<Renderer>().material = objectSeenMat;
+        objectSeen = null;
+        objectSeenMat = null;
+
+    }
     private void liftObject(Transform objHit)
     {
+        UnHighlight();
+        heldTransform = objHit;
         
         holdingSound.mute = false;
-        objHolding = objHit.gameObject;
         objHit.parent = null;
         
-        rb = objHolding.GetComponent<Rigidbody>();
         // If we are not carrying anything, pick the item up.
         if(!handsFull)
         {
-            rb.useGravity = false;
-            objHolding.GetComponent<BeingHeld>().enabled = true;
+            objHit.gameObject.GetComponent<BeingHeld>().enabled = true;
             //Debug.Log("I am going to pick this up");
             //rb.constraints = RigidbodyConstraints.FreezeAll;
             //objHit.position = onHand.position;
@@ -101,25 +112,25 @@ public class Pickup : MonoBehaviour
 
     public void dropObject()
     {
+        GameObject heldGameObject = heldTransform.gameObject;
+        heldTransform = null;
         holdingSound.mute = true;
         //Debug.Log("Drop it mr);
-        objHolding.GetComponent<BeingHeld>().enabled = false;
+        heldGameObject.GetComponent<BeingHeld>().enabled = false;
         if(dimensionScript.dimension == 1)
         {
             //Debug.Log(objHolding);
-            objHolding.GetComponent<Transform>().parent = GameObject.FindWithTag("HumanDim").GetComponent<Transform>();
+            heldGameObject.GetComponent<Transform>().parent = GameObject.FindWithTag("HumanDim").GetComponent<Transform>();
         }
         else
         {
-            objHolding.GetComponent<Transform>().parent = GameObject.FindWithTag("OtherDim").GetComponent<Transform>();
+            heldGameObject.GetComponent<Transform>().parent = GameObject.FindWithTag("OtherDim").GetComponent<Transform>();
 
         }
         
-        rb.useGravity = true;
         //rb.constraints = RigidbodyConstraints.None;
         
         handsFull = !handsFull;
-        objHolding = null;
 
     }
 }

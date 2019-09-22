@@ -26,11 +26,11 @@ public class DoorScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("has collieded");
+        //Debug.Log("has collieded");
         //anim.enabled = true;
         if (other.CompareTag("Player") && !isOpen)
         {
-            Debug.Log("collided with player");
+            //Debug.Log("collided with player");
             anim.SetTrigger("DoorOpen");
             audioData.Play(0);
             isOpen = true;

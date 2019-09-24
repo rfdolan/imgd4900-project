@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private AudioSource footfall;
     public bool isWalking = false;
     public AudioSource changeSound;
+    public Pickup pickupScript;
     Vector3 playerHeight;
 
     DimensionSwap dimensionScript; 
@@ -86,6 +87,13 @@ public class PlayerController : MonoBehaviour
             //get list of game objects for each dimension
             forHuman = dimensionScript.humanObjects.GetComponentInChildren<Transform>();
             forOther = dimensionScript.otherObjects.GetComponentInChildren<Transform>();
+            if(pickupScript.handsFull )
+            {
+                if(pickupScript.heldTransform.tag == "Non-Transferrable")
+                {
+                    pickupScript.dropObject();
+                }
+            }
             //load children for lights 
            // lightChildren = lightScript.lightParent.GetComponentsInChildren<Light>(true);
 

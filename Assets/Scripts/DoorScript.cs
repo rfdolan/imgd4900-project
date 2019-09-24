@@ -6,7 +6,8 @@ public class DoorScript : MonoBehaviour
 {
     public float doorSpeed;
     Animator anim;
-    AudioSource audioData;
+    public AudioSource openSound;
+    public AudioSource closeSound;
     private bool isOpen;
     private Rigidbody rb;
     private Vector3 openPos;
@@ -20,7 +21,6 @@ public class DoorScript : MonoBehaviour
         anim = GetComponent<Animator>();
        // anim.enabled = false;
        
-       audioData = GetComponent<AudioSource>();
        rb = GetComponent<Rigidbody>();
        openPos = rb.position;
        closedPos = new Vector3(openPos.x-2, openPos.y, openPos.z);
@@ -95,7 +95,7 @@ public class DoorScript : MonoBehaviour
     public void OpenDoor()
     {
         //anim.SetTrigger("DoorOpen");
-        audioData.Play(0);
+        openSound.Play(0);
         isOpen = true;
         Vector3 currentPos = this.GetComponent<Transform>().position;
         Vector3 direction = openPos-currentPos;
@@ -109,6 +109,7 @@ public class DoorScript : MonoBehaviour
      */
     public void CloseDoor()
     {
+        closeSound.Play(0);
         isOpen = false;
         Vector3 currentPos = this.GetComponent<Transform>().position;
         Vector3 direction = closedPos-currentPos;

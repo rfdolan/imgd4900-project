@@ -9,7 +9,12 @@ public class Lights : MonoBehaviour
     Color hdColor = Color.blue;
     //new Color(181, 181, 181); //normal white-ish color 
     Color odColor = Color.green;
-        //new Color(177, 255, 124); //greenish color 
+    //new Color(177, 255, 124); //greenish color 
+
+    //change material instead of color 
+    public Material humanMaterial;
+    public Material otherMaterial;
+    //Renderer rend;
 
     public GameObject lightParent;
     Light[] lightChildren;
@@ -19,6 +24,10 @@ public class Lights : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //renderer 
+        //rend = GetComponent<Renderer>();
+        //rend.enabled = true;
+        lightParent.GetComponent<MeshRenderer>().material = humanMaterial;
         lightChildren = lightParent.GetComponentsInChildren<Light>(true);
         changeToHuman(lightChildren);
         dimension = 1;
@@ -34,9 +43,12 @@ public class Lights : MonoBehaviour
 
             if(dimension == 1) //we have changed to human
             {
+                lightParent.GetComponent<MeshRenderer>().material = humanMaterial;
                 changeToHuman(lightChildren);
+
             } else //assume we changed to other 
             {
+                lightParent.GetComponent<MeshRenderer>().material = otherMaterial;
                 changeToOther(lightChildren);
             }
         }
@@ -49,6 +61,7 @@ public class Lights : MonoBehaviour
         foreach(Light child in l)
         {
             child.color = hdColor;
+            
         }
     }
 

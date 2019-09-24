@@ -19,8 +19,8 @@ public class PlayerController : MonoBehaviour
     Transform forHuman;
     Transform forOther;
     //to change light color 
-    Lights lightScript;
-    Light[] lightChildren;
+    //Lights lightScript;
+    //Light[] lightChildren;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
         footfall = GetComponent<AudioSource>();
 
         dimensionScript = GameObject.Find("Player").GetComponent<DimensionSwap>(); //get dimension script
-        lightScript = GameObject.Find("Player").GetComponent<Lights>();
+        //lightScript = GameObject.Find("Player").GetComponent<Lights>();
         dimension = 1; //we start in the humna dimension
 
         //load human dimension first 
@@ -40,8 +40,8 @@ public class PlayerController : MonoBehaviour
         ActivateDim(forHuman);
         DeactivateDim(forOther);
         //make sure light is right color 
-        lightChildren = lightScript.lightParent.GetComponentsInChildren<Light>(true);
-        lightScript.changeToHuman(lightChildren);
+        //lightChildren = lightScript.lightParent.GetComponentsInChildren<Light>(true);
+       // lightScript.changeToHuman(lightChildren);
 
 
     }
@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
             //load children for lights 
-            lightChildren = lightScript.lightParent.GetComponentsInChildren<Light>(true);
+           // lightChildren = lightScript.lightParent.GetComponentsInChildren<Light>(true);
 
 
             //Change dimension
@@ -108,7 +108,7 @@ public class PlayerController : MonoBehaviour
                 DeactivateDim(forOther);
 
                 //lights
-                lightScript.changeToHuman(lightChildren);
+                //lightScript.changeToHuman(lightChildren);
             }
             else //assume we are in other dimension 
             {
@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
                 DeactivateDim(forHuman);
 
                 //lights
-                lightScript.changeToOther(lightChildren);
+                //lightScript.changeToOther(lightChildren);
             }
 
 

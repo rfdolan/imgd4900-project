@@ -12,17 +12,34 @@ public class Lights : MonoBehaviour
         //new Color(177, 255, 124); //greenish color 
 
     public GameObject lightParent;
+    Light[] lightChildren;
+    //keep track of dimension 
+    int dimension;
     
     // Start is called before the first frame update
     void Start()
     {
-       
+        lightChildren = lightParent.GetComponentsInChildren<Light>(true);
+        changeToHuman(lightChildren);
+        dimension = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //change dimension 
+            dimension *= -1;
+
+            if(dimension == 1) //we have changed to human
+            {
+                changeToHuman(lightChildren);
+            } else //assume we changed to other 
+            {
+                changeToOther(lightChildren);
+            }
+        }
     }
 
     ///Change the colors of all lights in game to a match human dimension 

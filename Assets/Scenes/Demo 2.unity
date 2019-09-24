@@ -673,7 +673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &721632544
 RectTransform:
   m_ObjectHideFlags: 0
@@ -738,9 +738,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Welcome! Your goal is to place the box on top of the pedestal...good luck.
-
-    (hint: press ''e'' and ''space'' to help you solve the puzzle)'
+  m_Text: Use 'e' and 'space' to help you solve the puzzle!
 --- !u!222 &721632547
 CanvasRenderer:
   m_ObjectHideFlags: 0

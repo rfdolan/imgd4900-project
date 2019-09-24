@@ -36,7 +36,6 @@ public class Grabbed : MonoBehaviour
     void OnEnable()
     {
         rb.useGravity = false;
-        targetPoint.y = targetPoint.y + 0.5f;
         Vector3 start = targetPoint;
         start.y = start.y + 1; 
         rb.position = start;

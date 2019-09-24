@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorScript : MonoBehaviour
+public class DoorScriptZ : MonoBehaviour
 {
     public float doorSpeed;
     Animator anim;
@@ -49,12 +49,12 @@ public class DoorScript : MonoBehaviour
         */
         
         // If the door is going to go too far, stop.
-        if(((rb.position.x > openPos.x) && isOpen) || ((rb.position.x < closedPos.x) && !isOpen))
+        if(((rb.position.z < openPos.z) && isOpen) || ((rb.position.z > closedPos.z) && !isOpen))
         {
             rb.velocity = new Vector3(0,0,0);
         }
         // If the door is trying to close but something is in the way, keep trying to close.
-        else if(!isOpen && rb.position.x > closedPos.x)
+        else if(!isOpen && rb.position.z < closedPos.z)
         {
             Vector3 target = closedPos - rb.position;
             target = target.normalized * doorSpeed;

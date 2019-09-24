@@ -214,6 +214,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   isWalking: 0
+  changeSound: {fileID: 0}
+  pickupScript: {fileID: 0}
   dimension: 0
 --- !u!82 &7568334737557767047
 AudioSource:
@@ -225,7 +227,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: bb2d82fed681e964483a3842bb801031, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 83335d3492418df4a9d25f937d352965, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -339,6 +341,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 7568334736538511814}
   highlightMat: {fileID: 2100000, guid: 0bfaa4411d74a2d46ad8956f0e305e28, type: 2}
+  holdingSound: {fileID: 3607799964131844078}
+  handsFull: 0
+  heldTransform: {fileID: 0}
 --- !u!143 &7568334737557767042
 CharacterController:
   m_ObjectHideFlags: 0
@@ -367,7 +372,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6c7dc36584927a34a8524af72a0c7b74, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5b9bdfaad7655654988eabbc1fcefcdf, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

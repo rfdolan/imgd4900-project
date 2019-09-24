@@ -8,6 +8,7 @@ TagManager:
   - HumanDim
   - OtherDim
   - Activatable
+  - Non-Transferrable
   layers:
   - Default
   - TransparentFX
@@ -18,9 +19,9 @@ TagManager:
   - 
   - 
   - Ignore Lighting
-  - 
-  - 
-  - 
+  - Doors
+  - Standard Physics Objects
+  - Level Geometry
   - 
   - 
   - 

@@ -65,6 +65,7 @@ MonoBehaviour:
   exit: 1
   cubeOffMat: {fileID: 0}
   cubeOnMat: {fileID: 0}
+  openDoor: {fileID: 0}
 --- !u!33 &6590292403923319297
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4848,6 +4849,7 @@ GameObject:
   - component: {fileID: 6059199673235762983}
   - component: {fileID: 35593848203728418}
   - component: {fileID: -3000675654035824047}
+  - component: {fileID: 5168744112494547477}
   m_Layer: 0
   m_Name: Activator
   m_TagString: Liftable
@@ -5031,3 +5033,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hand: {fileID: 0}
   speed: 0
+  parentScript: {fileID: 0}
+--- !u!114 &5168744112494547477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6059199673235762982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91087c07ccf25e4cb6082c2270ce871, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ActScript : MonoBehaviour
 {
     public GameObject Activator;
-    public GameObject Door;
+    public DoorScript Door;
     private bool holdingSomething = false;
     // Start is called before the first frame update
     void Start()
@@ -17,11 +17,11 @@ public class ActScript : MonoBehaviour
     void Update()
     {
         
+        
     }
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("Hit something");
 
         if(holdingSomething)
         {
@@ -36,13 +36,33 @@ public class ActScript : MonoBehaviour
             }
 
         }
+
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if(holdingSomething){
+            GameObject hitObj = other.transform.gameObject;
+            if(hitObj == Activator)
+            {
+                if(hitObj.GetComponent<BeingHeld>().enabled)
+                {
+                    holdingSomething = false;
+                    hitObj.GetComponent<Grabbed>().enabled = false;
+                    Door.CloseDoor();
+                    Debug.Log("Releasing");
+
+                }
+            }
+        }
     }
 
     private void GrabObj(GameObject obj)
     {
         Debug.Log("Grabbing " + obj);
-        holdingSomething = !holdingSomething;
-        obj.transform.position = new Vector3(this.transform.position.x, 2.0f, this.transform.position.z);
+        holdingSomething = true;
+        obj.GetComponent<Grabbed>().targetPoint = this.transform.position;
+        obj.GetComponent<Grabbed>().enabled = true;
+        Door.OpenDoor();
 
     }
 }

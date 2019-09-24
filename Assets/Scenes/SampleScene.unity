@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -394,6 +394,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 124
   m_CollisionDetection: 0
+--- !u!114 &567546899 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4714434868888391854, guid: cf4dfac795a18ed44ad66e2ebbef64ea,
+    type: 3}
+  m_PrefabInstance: {fileID: 567546893}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567546894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 910f52004ef5f0442b9a1b249de2aea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &570539300
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +487,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1800561645}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &638242347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2104030988400831736, guid: 9a25bbbca98c5a24b895aa2a3129ebe0,
+    type: 3}
+  m_PrefabInstance: {fileID: 7931657115551387981}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &638242348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638242347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f07bb01694090c445b59fcf4b666d3f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Activator: {fileID: 963952899}
+  Door: {fileID: 567546899}
 --- !u!1 &698208771
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,6 +1005,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &963952899 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6059199673235762982, guid: b3bbab1523c32254f9f6dcece63427ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 6059199672402132194}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &998690282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1936,6 +1974,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6059199673079170527, guid: b3bbab1523c32254f9f6dcece63427ed,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -3000675654035824047, guid: b3bbab1523c32254f9f6dcece63427ed,
         type: 3}
       propertyPath: hand
@@ -1951,10 +1994,15 @@ PrefabInstance:
       propertyPath: parentScript
       value: 
       objectReference: {fileID: 200551276}
-    - target: {fileID: 6059199673079170527, guid: b3bbab1523c32254f9f6dcece63427ed,
+    - target: {fileID: 5168744112494547477, guid: b3bbab1523c32254f9f6dcece63427ed,
         type: 3}
-      propertyPath: m_Layer
-      value: 10
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5168744112494547477, guid: b3bbab1523c32254f9f6dcece63427ed,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3bbab1523c32254f9f6dcece63427ed, type: 3}
@@ -2025,6 +2073,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6211407742609024221, guid: 9a25bbbca98c5a24b895aa2a3129ebe0,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3877652824359345290, guid: fd4e07860a5464b2eb365caa427927c5,
+        type: 3}
+    - target: {fileID: 364742117456189476, guid: 9a25bbbca98c5a24b895aa2a3129ebe0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 8554655104631171556, guid: 4302a4c113c63463cb63d16b83986205,
+        type: 3}
     - target: {fileID: 364742117456189476, guid: 9a25bbbca98c5a24b895aa2a3129ebe0,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

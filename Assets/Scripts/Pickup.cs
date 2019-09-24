@@ -37,7 +37,7 @@ public class Pickup : MonoBehaviour
             else if (Physics.Raycast(ray, out hit, 2)) {
                 Transform objectHit = hit.transform;
                 //Debug.Log("We hit "+ objectHit);
-                if(objectHit.tag == "Liftable" || objectHit.tag == "Non-Transferrable")
+                if(objectHit.tag == "Liftable" || objectHit.tag == "Non-Transferrable" || objectHit.tag == "Cube")
                 {
                     liftObject(objectHit);
                 }
@@ -48,7 +48,7 @@ public class Pickup : MonoBehaviour
         {
             //Debug.Log("There is nothing in my hands.");
             // We are seeing a pick upable object
-            if(Physics.Raycast(highlightRay, out hit, 2) && ((hit.transform.tag == "Liftable" ) || (hit.transform.tag == "Non-Transferrable")))
+            if(Physics.Raycast(highlightRay, out hit, 2) && ((hit.transform.tag == "Liftable" ) || (hit.transform.tag == "Non-Transferrable") || (hit.transform.tag == "Cube")))
             {
                 if(objectSeen == null)
                 {
@@ -108,10 +108,16 @@ public class Pickup : MonoBehaviour
     public void dropObject()
     {
         GameObject heldGameObject = heldTransform.gameObject;
-        heldTransform = null;
         holdingSound.mute = true;
         //Debug.Log("Drop it mr);
+        handsFull = !handsFull;
         heldGameObject.GetComponent<BeingHeld>().enabled = false;
+        if(heldTransform.tag == "Cube")
+        {
+            heldTransform = null;
+                return;
+        }
+        heldTransform = null;
         if(dimensionScript.dimension == 1)
         {
             //Debug.Log(objHolding);
@@ -125,7 +131,6 @@ public class Pickup : MonoBehaviour
         
         //rb.constraints = RigidbodyConstraints.None;
         
-        handsFull = !handsFull;
 
     }
 }

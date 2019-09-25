@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public float speed = 10.0f;
     private AudioSource footfall;
     public bool isWalking = false;
+    public AudioSource changeSound;
+    public Pickup pickupScript;
     Vector3 playerHeight;
 
     DimensionSwap dimensionScript; 
@@ -16,6 +18,9 @@ public class PlayerController : MonoBehaviour
     //parent of list of objects for each dimension 
     Transform forHuman;
     Transform forOther;
+    //to change light color 
+    //Lights lightScript;
+    //Light[] lightChildren;
 
     // Start is called before the first frame update
     void Start()
@@ -25,13 +30,20 @@ public class PlayerController : MonoBehaviour
         footfall = GetComponent<AudioSource>();
 
         dimensionScript = GameObject.Find("Player").GetComponent<DimensionSwap>(); //get dimension script
+        //lightScript = GameObject.Find("Player").GetComponent<Lights>();
         dimension = 1; //we start in the humna dimension
 
         //load human dimension first 
+        //load objects
         forHuman = dimensionScript.humanObjects.GetComponentInChildren<Transform>();
         forOther = dimensionScript.otherObjects.GetComponentInChildren<Transform>();
         ActivateDim(forHuman);
         DeactivateDim(forOther);
+        //make sure light is right color 
+        //lightChildren = lightScript.lightParent.GetComponentsInChildren<Light>(true);
+       // lightScript.changeToHuman(lightChildren);
+
+
     }
 
     // Update is called once per frame
@@ -51,7 +63,7 @@ public class PlayerController : MonoBehaviour
         //transform.translate(move);
         gameObject.GetComponent<CharacterController>().Move(transform.TransformDirection(move));
         playerHeight = transform.position;
-        playerHeight.y = Mathf.Clamp(playerHeight.y,1.0f,1.0f);
+        playerHeight.y = Mathf.Clamp(playerHeight.y,1.05f,1.05f);
         transform.position = playerHeight;
 
         //float translation = Input.GetAxis("Vertical") * speed;
@@ -68,22 +80,44 @@ public class PlayerController : MonoBehaviour
         //for changing dimensions 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            if(!changeSound.isPlaying)
+            {
+                changeSound.Play(0);
+            }
             //get list of game objects for each dimension
             forHuman = dimensionScript.humanObjects.GetComponentInChildren<Transform>();
             forOther = dimensionScript.otherObjects.GetComponentInChildren<Transform>();
+            if(pickupScript.handsFull )
+            {
+                if(pickupScript.heldTransform.tag == "Non-Transferrable")
+                {
+                    pickupScript.dropObject();
+                }
+            }
+            //load children for lights 
+           // lightChildren = lightScript.lightParent.GetComponentsInChildren<Light>(true);
+
 
             //Change dimension
             dimension *= -1;
 
             if (dimension == 1) //we are in the human dimension 
             {
+                //assets 
                 ActivateDim(forHuman);
                 DeactivateDim(forOther);
+
+                //lights
+                //lightScript.changeToHuman(lightChildren);
             }
             else //assume we are in other dimension 
             {
+                //assets
                 ActivateDim(forOther);
                 DeactivateDim(forHuman);
+
+                //lights
+                //lightScript.changeToOther(lightChildren);
             }
 
 
@@ -120,6 +154,7 @@ public class PlayerController : MonoBehaviour
         if (hit.moveDirection.y < -0.3) {
             return;
         }
+       
 
         Vector3 poushDir = new Vector3(hit.moveDirection.x,0,hit.moveDirection.z);
         body.velocity = poushDir * pushPower;

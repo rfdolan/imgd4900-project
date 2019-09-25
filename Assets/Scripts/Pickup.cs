@@ -2,84 +2,135 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*  Ok here's the deal with this. Right now you click once to pick up an object and click again to put it down.
-    The item can be clipped into a wall while you are holding it, but you can only drop it if the center is out of the wall.
-    So if you drop it inside of a wall, it'll fly back out. I can keep working on it but for now this works.
-    I can also change it to a button press instead of mouse click if we want.
-*/
 public class Pickup : MonoBehaviour
 {
 
-    public Transform onHand;
-    private Rigidbody rb;
     public Camera cam;
+    public Material highlightMat;
+    public AudioSource holdingSound;
+    private Rigidbody rb;
     private PlayerController dimensionScript;
-    private bool handsFull;
-    private GameObject objHolding;
+    public bool handsFull;
+    private GameObject objectSeen = null;
+    private Material objectSeenMat = null;
+    public Transform heldTransform;
 
     void Start() 
     {
         dimensionScript = gameObject.GetComponent<PlayerController>();
         handsFull = false;
     }
-
     void Update()
     {
         // Create the ray and raycast that we are going to use
         RaycastHit hit;
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        Ray highlightRay = cam.ScreenPointToRay(Input.mousePosition);
         if(Input.GetKeyDown("e"))
         {
             if(handsFull)
             {
                 dropObject();
-
+                return;
             }
             // See if it hit. To change the range, change the last number.
             else if (Physics.Raycast(ray, out hit, 2)) {
                 Transform objectHit = hit.transform;
                 //Debug.Log("We hit "+ objectHit);
-                if(objectHit.tag == "Liftable")
+                if(objectHit.tag == "Liftable" || objectHit.tag == "Non-Transferrable" || objectHit.tag == "Cube")
                 {
                     liftObject(objectHit);
-                    // We are carrying something, which is what we hit. So put it down.
                 }
+            }
+        }
+        
+        if(!handsFull)
+        {
+            //Debug.Log("There is nothing in my hands.");
+            // We are seeing a pick upable object
+            if(Physics.Raycast(highlightRay, out hit, 2) && ((hit.transform.tag == "Liftable" ) || (hit.transform.tag == "Non-Transferrable") || (hit.transform.tag == "Cube")))
+            {
+                if(objectSeen == null)
+                {
+                    //Debug.Log("Highlight");
+                    // Store the object and it's material so we can change it back when we stop looking.
+                    objectSeen = hit.transform.gameObject;
+                    Highlight();
+                }
+            }
+            // If we just stopped looking at something, unhighlight.
+            else if(objectSeen != null)
+            {
+                //Debug.Log("Un-Highlight");
+                UnHighlight();
             }
         }
     }
 
-    private void liftObject(Transform objHit)
+    private void Highlight()
     {
-        objHolding = objHit.gameObject;
-        rb = objHolding.GetComponent<Rigidbody>();
-        // If we are not carrying anything, pick the item up.
-        if(!handsFull)
+        if(!objectSeen.GetComponent<Renderer>().material.name.Contains(highlightMat.name))
         {
-            //Debug.Log("I am going to pick this up");
-            rb.useGravity = false;
-            rb.constraints = RigidbodyConstraints.FreezeAll;
-            objHit.position = onHand.transform.position;
-            objHit.parent = this.transform;
+            objectSeenMat = objectSeen.GetComponent<Renderer>().material;
         }
-        handsFull = !handsFull;
+        objectSeen.GetComponent<Renderer>().material = highlightMat;
 
     }
 
-    private void dropObject()
+    private void UnHighlight()
     {
+        objectSeen.GetComponent<Renderer>().material = objectSeenMat;
+        objectSeen = null;
+        objectSeenMat = null;
+
+    }
+    private void liftObject(Transform objHit)
+    {
+        UnHighlight();
+        heldTransform = objHit;
+        
+        holdingSound.mute = false;
+        objHit.parent = null;
+        
+        // If we are not carrying anything, pick the item up.
+        if(!handsFull)
+        {
+            objHit.gameObject.GetComponent<BeingHeld>().enabled = true;
+            //Debug.Log("I am going to pick this up");
+            //rb.constraints = RigidbodyConstraints.FreezeAll;
+            //objHit.position = onHand.position;
+            //objHit.parent = this.transform;
+        }
+        
+        handsFull = !handsFull;
+    }
+
+    public void dropObject()
+    {
+        GameObject heldGameObject = heldTransform.gameObject;
+        holdingSound.mute = true;
+        //Debug.Log("Drop it mr);
+        handsFull = !handsFull;
+        heldGameObject.GetComponent<BeingHeld>().enabled = false;
+        if(heldTransform.tag == "Cube")
+        {
+            heldTransform = null;
+                return;
+        }
+        heldTransform = null;
         if(dimensionScript.dimension == 1)
         {
-            objHolding.GetComponent<Transform>().parent = GameObject.FindWithTag("HumanDim").GetComponent<Transform>();
+            //Debug.Log(objHolding);
+            heldGameObject.GetComponent<Transform>().parent = GameObject.FindWithTag("HumanDim").GetComponent<Transform>();
         }
         else
         {
-            objHolding.GetComponent<Transform>().parent = GameObject.FindWithTag("OtherDim").GetComponent<Transform>();
+            heldGameObject.GetComponent<Transform>().parent = GameObject.FindWithTag("OtherDim").GetComponent<Transform>();
 
         }
-        rb.useGravity = true;
-        rb.constraints = RigidbodyConstraints.None;
-        handsFull = !handsFull;
-        objHolding = null;
+        
+        //rb.constraints = RigidbodyConstraints.None;
+        
 
     }
 }

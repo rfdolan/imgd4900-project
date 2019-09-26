@@ -23,9 +23,9 @@ TagManager:
   - Doors
   - Standard Physics Objects
   - Level Geometry
-  - 
-  - 
-  - 
+  - HumanDim
+  - OtherDim
+  - HumanDimDoor
   - 
   - 
   - 

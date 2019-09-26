@@ -37,8 +37,10 @@ public class PlayerController : MonoBehaviour
         //load objects
         forHuman = dimensionScript.humanObjects.GetComponentInChildren<Transform>();
         forOther = dimensionScript.otherObjects.GetComponentInChildren<Transform>();
+        /*
         ActivateDim(forHuman);
         DeactivateDim(forOther);
+        */
         //make sure light is right color 
         //lightChildren = lightScript.lightParent.GetComponentsInChildren<Light>(true);
        // lightScript.changeToHuman(lightChildren);
@@ -101,23 +103,31 @@ public class PlayerController : MonoBehaviour
             //Change dimension
             dimension *= -1;
 
+            // Here we move the player to the correct dimension layer so they will collide with the correct things.
+            // ADD THE CODE TO MAKE THE OBJECTS TRANSPARENT HERE THANKS.
             if (dimension == 1) //we are in the human dimension 
             {
+                /*
                 //assets 
                 ActivateDim(forHuman);
                 DeactivateDim(forOther);
 
                 //lights
                 //lightScript.changeToHuman(lightChildren);
+                */
+                this.gameObject.layer = LayerMask.NameToLayer("HumanDim");
             }
             else //assume we are in other dimension 
             {
+                /* 
                 //assets
                 ActivateDim(forOther);
                 DeactivateDim(forHuman);
 
                 //lights
                 //lightScript.changeToOther(lightChildren);
+                */
+                this.gameObject.layer = LayerMask.NameToLayer("OtherDim");
             }
 
 

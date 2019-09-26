@@ -22,10 +22,11 @@ public class DoorScript : MonoBehaviour
        // anim.enabled = false;
        
        rb = GetComponent<Rigidbody>();
-       openPos = rb.position;
-       closedPos = this.gameObject.transform.GetChild(0).transform.position;
+       openPos = this.transform.parent.GetChild(this.transform.GetSiblingIndex() + 2).position;
+       closedPos = this.transform.parent.GetChild(this.transform.GetSiblingIndex() + 1).position;
        // Start with every door open and then close them.
        Debug.Log(this + "ClosedPos is " + closedPos);
+       Debug.Log(this + "OpenPos is " + openPos);
        CloseDoor();
 
     }
@@ -33,7 +34,7 @@ public class DoorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
+        
         // Simple user controlled opening and closing of the door.
         if(Input.GetKeyDown("b"))
         {
@@ -46,8 +47,17 @@ public class DoorScript : MonoBehaviour
                 OpenDoor();
             }
         }
-        */
         
+        if(isOpen)
+        {
+            rb.velocity = (openPos - rb.position).normalized * doorSpeed;
+        }
+        else if (!isOpen)
+        {
+            rb.velocity = (closedPos - rb.position).normalized * doorSpeed;
+        }
+        
+        /*
         // If the door is going to go too far, stop.
         if(((rb.position.x > openPos.x) && isOpen) || ((rb.position.x < closedPos.x) && !isOpen))
         {
@@ -61,9 +71,9 @@ public class DoorScript : MonoBehaviour
             rb.velocity = target;
 
         }
+        */
         
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -92,7 +102,7 @@ public class DoorScript : MonoBehaviour
 
     private void pauseAnimationEvent()
     {
-        anim.enabled = false;
+        //anim.enabled = false;
     }
 
     /*
@@ -103,11 +113,13 @@ public class DoorScript : MonoBehaviour
         //anim.SetTrigger("DoorOpen");
         openSound.Play(0);
         isOpen = true;
+        /*
         Vector3 currentPos = this.GetComponent<Transform>().position;
         Vector3 direction = openPos-currentPos;
         direction = direction.normalized;
         direction *= doorSpeed;
         rb.velocity = direction;
+        */
     }
 
     /*
@@ -117,11 +129,13 @@ public class DoorScript : MonoBehaviour
     {
         closeSound.Play(0);
         isOpen = false;
+        /*
         Vector3 currentPos = this.GetComponent<Transform>().position;
         Vector3 direction = closedPos-currentPos;
         direction = direction.normalized;
         direction *= doorSpeed;
         rb.velocity = direction;
+        */
 
     }
 }

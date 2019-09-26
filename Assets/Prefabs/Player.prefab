@@ -291,7 +291,7 @@ MonoBehaviour:
   highlightMat: {fileID: 2100000, guid: 0bfaa4411d74a2d46ad8956f0e305e28, type: 2}
   holdingSound: {fileID: 3607799964131844078}
   handsFull: 0
-  heldTransform: {fileID: 0}
+  heldTransform: {fileID: 7568334737963934462}
 --- !u!143 &7568334737557767042
 CharacterController:
   m_ObjectHideFlags: 0
@@ -527,7 +527,7 @@ Transform:
   m_GameObject: {fileID: 7568334737963934463}
   m_LocalRotation: {x: -0.000000044703484, y: 0.00000008940697, z: -0.00000025331974,
     w: 1}
-  m_LocalPosition: {x: 0, y: 0.10000016, z: 1.3}
+  m_LocalPosition: {x: 0, y: 0.10000016, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7568334736538511675}

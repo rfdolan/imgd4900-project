@@ -1813,6 +1813,21 @@ PrefabInstance:
       propertyPath: otherObjects
       value: 
       objectReference: {fileID: 734471760}
+    - target: {fileID: 7568334737557767046, guid: f62b91b4bbe5f7044b0d46f71b79f91b,
+        type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568334736538511673, guid: f62b91b4bbe5f7044b0d46f71b79f91b,
+        type: 3}
+      propertyPath: sensitivity
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568334736538511673, guid: f62b91b4bbe5f7044b0d46f71b79f91b,
+        type: 3}
+      propertyPath: smoothing
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7568334737557767045, guid: f62b91b4bbe5f7044b0d46f71b79f91b,
         type: 3}
       propertyPath: heldTransform

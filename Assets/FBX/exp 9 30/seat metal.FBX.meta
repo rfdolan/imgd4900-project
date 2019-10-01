@@ -3,7 +3,12 @@ guid: fdad93a3303614760a9f023ef8316476
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: seat metal
+    second: {fileID: 2100000, guid: 39956d5129043497d9e24965fb2e2702, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

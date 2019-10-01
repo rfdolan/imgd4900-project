@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
         //transform.translate(move);
         gameObject.GetComponent<CharacterController>().Move(transform.TransformDirection(move));
         playerHeight = transform.position;
-        playerHeight.y = Mathf.Clamp(playerHeight.y,1.05f,1.05f);
+        playerHeight.y = Mathf.Clamp(playerHeight.y,1.55f,1.55f);
         transform.position = playerHeight;
 
         //float translation = Input.GetAxis("Vertical") * speed;
@@ -112,11 +112,10 @@ public class PlayerController : MonoBehaviour
             // ADD THE CODE TO MAKE THE OBJECTS TRANSPARENT HERE THANKS.
             if (dimension == 1) //we are in the human dimension 
             {
-                /*
                 //assets 
                 ActivateDim(forHuman);
                 DeactivateDim(forOther);
-
+                /*
                 //lights
                 //lightScript.changeToHuman(lightChildren);
                 */
@@ -124,11 +123,10 @@ public class PlayerController : MonoBehaviour
             }
             else //assume we are in other dimension 
             {
-                /* 
                 //assets
                 ActivateDim(forOther);
                 DeactivateDim(forHuman);
-
+                /* 
                 //lights
                 //lightScript.changeToOther(lightChildren);
                 */
@@ -145,7 +143,20 @@ public class PlayerController : MonoBehaviour
     {
         foreach(Transform child in obj) //get all the children of the object
         {
-            child.gameObject.SetActive(true);
+            Material mat = child.gameObject.GetComponent<MeshRenderer>().material;
+            mat.SetFloat("_Mode",3);
+            mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+			mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+			mat.SetInt("_ZWrite", 1);
+			mat.DisableKeyword("_ALPHATEST_ON");
+			mat.DisableKeyword("_ALPHABLEND_ON");
+			mat.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+			mat.renderQueue = -1;
+            Color color = mat.color;
+            color.a = 1.0f;
+            mat.color = color;
+            child.gameObject.GetComponent<MeshRenderer>().material = mat;
+            Debug.Log("heelo loser " + child.gameObject.GetComponent<MeshRenderer>().material);
         }
     }
 
@@ -155,7 +166,20 @@ public class PlayerController : MonoBehaviour
     {
         foreach (Transform child in obj) //get all the children of the object
         {
-            child.gameObject.SetActive(false);
+            Material mat = child.gameObject.GetComponent<MeshRenderer>().material;
+            mat.SetFloat("_Mode", 3);
+            mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+            mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+            mat.SetInt("_ZWrite", 0);
+            mat.DisableKeyword("_ALPHATEST_ON");
+            mat.DisableKeyword("_ALPHABLEND_ON");
+            mat.EnableKeyword("_ALPHAPREMULTIPLY_ON");
+            mat.renderQueue = 3000;
+            Color color = mat.color;
+            color.a = 0.1f;
+            mat.color = color;
+            child.gameObject.GetComponent<MeshRenderer>().material = mat;
+            Debug.Log("heelo loser X2 " + child.gameObject.GetComponent<MeshRenderer>().material);
         }
     }
 

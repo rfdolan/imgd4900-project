@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7760974086199762681}
   m_Layer: 0
-  m_Name: FinalDoor1
+  m_Name: FinalDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,12 +137,11 @@ GameObject:
   - component: {fileID: 7760974086269392709}
   - component: {fileID: 7760974086269392708}
   - component: {fileID: 7760974084778525563}
-  - component: {fileID: 7760974086269392707}
   - component: {fileID: 7760974086269392706}
   - component: {fileID: 7760974086269392705}
   - component: {fileID: 7760974086269392704}
   - component: {fileID: 7760974086269392711}
-  - component: {fileID: 7760974086269392710}
+  - component: {fileID: 4427647926781077530}
   m_Layer: 9
   m_Name: Door
   m_TagString: Untagged
@@ -235,19 +234,6 @@ MonoBehaviour:
   doorSpeed: 4
   openSound: {fileID: 7760974086269392706}
   closeSound: {fileID: 7760974086269392705}
---- !u!135 &7760974086269392707
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7760974086269392718}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.3
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &7760974086269392706
 AudioSource:
   m_ObjectHideFlags: 0
@@ -355,7 +341,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5131d2e5350d11e4b958b0acd4bc40e3, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
@@ -464,14 +450,14 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7760974086269392718}
   m_CullTransparentMesh: 0
---- !u!33 &7760974086269392710
+--- !u!33 &4427647926781077530
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7760974086269392718}
-  m_Mesh: {fileID: 4143871023327153042, guid: 485690f4a98c2b548a065a15bcf47e62, type: 3}
+  m_Mesh: {fileID: 4143871023327153042, guid: accb43fea949145cdbf94bb930cfb49d, type: 3}
 --- !u!1 &7760974086579954842
 GameObject:
   m_ObjectHideFlags: 0

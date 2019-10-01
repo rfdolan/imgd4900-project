@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     //to change light color 
     //Lights lightScript;
     //Light[] lightChildren;
+    public Animator animator;
+
 
     // Start is called before the first frame update
     void Start()
@@ -54,9 +56,12 @@ public class PlayerController : MonoBehaviour
         if(Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
         {
             footfall.volume = 1f;
+            animator.SetBool("isWalking", true);
+            Debug.Log("When u walkin");
         }
         else
         {
+            animator.SetBool("isWalking", false);
             footfall.volume = 0.0f;
         }
 

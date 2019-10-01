@@ -1607,7 +1607,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 677e57b1b0d7a6b4b85b77c846ba5600,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 677e57b1b0d7a6b4b85b77c846ba5600,
         type: 3}
@@ -4998,6 +4998,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a4800bbeb72034985fee15a4ade1f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1555785480 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 01fc6ac6264ac493fac7ac12480d3c7a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1905921221}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1555785481
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555785480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.6000013, y: 3.0000012, z: 2.5500014}
+  m_Center: {x: -0.60408103, y: -1.4667569, z: 1.2750006}
 --- !u!1001 &1602168035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5622,6 +5641,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 01fc6ac6264ac493fac7ac12480d3c7a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 01fc6ac6264ac493fac7ac12480d3c7a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 01fc6ac6264ac493fac7ac12480d3c7a,
         type: 3}

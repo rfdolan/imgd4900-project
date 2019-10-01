@@ -31,19 +31,19 @@ public class AmbientSoundController : MonoBehaviour
             switch(randomNum)
             {
                 case 0:
-                    Debug.Log("Playing sound 1");
+                    //Debug.Log("Playing sound 1");
                     sound1.Play(0);
                     break;
                 case 1:
-                    Debug.Log("Playing sound 2");
+                    //Debug.Log("Playing sound 2");
                     sound2.Play(0);
                     break;
                 case 2:
-                    Debug.Log("Playing sound 3");
+                   // Debug.Log("Playing sound 3");
                     sound3.Play(0);
                     break;
                 default:
-                    Debug.Log("Playing no sound");
+                    //Debug.Log("Playing no sound");
                     break;
             }
         }

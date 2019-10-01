@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
         {
             footfall.volume = 1f;
             animator.SetBool("isWalking", true);
-            Debug.Log("When u walkin");
+            //Debug.Log("When u walkin");
         }
         else
         {
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
         //transform.translate(move);
         gameObject.GetComponent<CharacterController>().Move(transform.TransformDirection(move));
         playerHeight = transform.position;
-        playerHeight.y = Mathf.Clamp(playerHeight.y,1.55f,1.55f);
+        playerHeight.y = Mathf.Clamp(playerHeight.y,1.25f,1.25f);
         transform.position = playerHeight;
 
         //float translation = Input.GetAxis("Vertical") * speed;
@@ -120,10 +120,12 @@ public class PlayerController : MonoBehaviour
                 //lightScript.changeToHuman(lightChildren);
                 */
                 this.gameObject.layer = LayerMask.NameToLayer("HumanDim");
+                RenderSettings.ambientLight = new Color (.96f,0.90f,0.79f,1.0f);
             }
             else //assume we are in other dimension 
             {
                 //assets
+                RenderSettings.ambientLight = new Color (.99f,0.08f,0.16f,1.0f);
                 ActivateDim(forOther);
                 DeactivateDim(forHuman);
                 /* 
@@ -137,12 +139,29 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
     ///Activate all Game Objects in specified dimension.
     /// <param name="obj">Parent of list of objects in a dimension</param>
     void ActivateDim(Transform obj)
     {
         foreach(Transform child in obj) //get all the children of the object
-        {
+        { 
+            if(child.gameObject.GetComponent<MeshRenderer>() == null && child.childCount > 0) { // if the child has children of its own
+                //Debug.Log("passed");
+                foreach(Transform childsChild in child) {
+                    //Debug.Log("passed #2");
+                    //Transform childsChild = child[i]
+                    if ( childsChild.gameObject.GetComponent<MeshRenderer>() != null ) { // if the childs child has a mesh
+                        //Debug.Log("passed #3");
+                        makeOpaque( childsChild );
+                    }
+                }
+            }
+            else {
+                //Debug.Log("Passed #4");
+                makeOpaque( child );
+            }
+            /* 
             Material mat = child.gameObject.GetComponent<MeshRenderer>().material;
             mat.SetFloat("_Mode",3);
             mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
@@ -156,7 +175,8 @@ public class PlayerController : MonoBehaviour
             color.a = 1.0f;
             mat.color = color;
             child.gameObject.GetComponent<MeshRenderer>().material = mat;
-            Debug.Log("heelo loser " + child.gameObject.GetComponent<MeshRenderer>().material);
+            //Debug.Log("heelo loser " + child.gameObject.GetComponent<MeshRenderer>().material);
+            */
         }
     }
 
@@ -164,8 +184,26 @@ public class PlayerController : MonoBehaviour
     /// <param name="obj">Parent of list of objects in a dimension</param>
     void DeactivateDim(Transform obj)
     {
-        foreach (Transform child in obj) //get all the children of the object
+        foreach (Transform child in obj) // get all the children of the Dimension Object
         {
+            // if the child doesn't have its own mesh and it has children
+            if(child.gameObject.GetComponent<MeshRenderer>() == null && child.childCount > 0) { // if the child has children of its own
+                //Debug.Log("passed");
+                foreach(Transform childsChild in child) {
+                    //Debug.Log("passed #2");
+                    //Transform childsChild = child[i];
+                    if ( childsChild.gameObject.GetComponent<MeshRenderer>() != null ) { // if the childs child has a mesh
+                    //Debug.Log("passed #3");
+                        makeTransparent(childsChild);
+                        //break;
+                    }
+                }
+            }
+            else {
+                //Debug.Log("Passed #4");
+                makeTransparent( child );
+            }
+            /* 
             Material mat = child.gameObject.GetComponent<MeshRenderer>().material;
             mat.SetFloat("_Mode", 3);
             mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
@@ -179,9 +217,43 @@ public class PlayerController : MonoBehaviour
             color.a = 0.1f;
             mat.color = color;
             child.gameObject.GetComponent<MeshRenderer>().material = mat;
-            Debug.Log("heelo loser X2 " + child.gameObject.GetComponent<MeshRenderer>().material);
+            //Debug.Log("heelo loser X2 " + child.gameObject.GetComponent<MeshRenderer>().material);
+            */
         }
     }
+        
+    void makeOpaque(Transform child) {
+        Material mat = child.gameObject.GetComponent<MeshRenderer>().material;
+        mat.SetFloat("_Mode",3);
+        mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+		mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+		mat.SetInt("_ZWrite", 1);
+		mat.DisableKeyword("_ALPHATEST_ON");
+		mat.DisableKeyword("_ALPHABLEND_ON");
+		mat.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+		mat.renderQueue = -1;
+        Color color = mat.color;
+        color.a = 1.0f;
+        mat.color = color;
+        child.gameObject.GetComponent<MeshRenderer>().material = mat;
+    }
+
+    void makeTransparent(Transform child) {
+        Material mat = child.gameObject.GetComponent<MeshRenderer>().material;
+        mat.SetFloat("_Mode", 3);
+        mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+        mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+        mat.SetInt("_ZWrite", 0);
+        mat.DisableKeyword("_ALPHATEST_ON");
+        mat.DisableKeyword("_ALPHABLEND_ON");
+        mat.EnableKeyword("_ALPHAPREMULTIPLY_ON");
+        mat.renderQueue = 3000;
+        Color color = mat.color;
+        color.a = 0.05f;
+        mat.color = color;
+        child.gameObject.GetComponent<MeshRenderer>().material = mat;
+    }
+
 
     float pushPower = 4.0f;
     void OnControllerColliderHit(ControllerColliderHit hit) {

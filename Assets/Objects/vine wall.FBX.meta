@@ -3,7 +3,12 @@ guid: 8ef42c25153cc4f9b8fe4508291cae7c
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vine
+    second: {fileID: 2100000, guid: def2d3479e97f6342bbbc6027d4d1e68, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -44,7 +49,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1

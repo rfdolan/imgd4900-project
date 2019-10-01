@@ -60,6 +60,7 @@ public class ActScript : MonoBehaviour
         //Debug.Log("Grabbing " + obj);
         holdingSomething = true;
         Vector3 target = this.transform.position;
+        target.y = target.y + 0.3f;
         obj.GetComponent<Grabbed>().targetPoint = target;
         obj.GetComponent<Grabbed>().enabled = true;
         Door.OpenDoor();

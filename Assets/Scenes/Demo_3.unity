@@ -136,7 +136,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &10810358
 Transform:
@@ -168,7 +168,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &22386504
 Transform:
@@ -325,6 +325,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: activator table ver1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3a62cdebfc4d74706ae053e4b45a3d0b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3a62cdebfc4d74706ae053e4b45a3d0b,
         type: 3}
@@ -989,7 +994,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Door
       value: 
-      objectReference: {fileID: 1543271026}
+      objectReference: {fileID: 1602431602}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a25bbbca98c5a24b895aa2a3129ebe0, type: 3}
 --- !u!4 &332578114 stripped
@@ -1352,7 +1357,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &524274388
 Transform:
@@ -1600,7 +1605,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 677e57b1b0d7a6b4b85b77c846ba5600,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 677e57b1b0d7a6b4b85b77c846ba5600,
         type: 3}
@@ -1620,7 +1625,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 677e57b1b0d7a6b4b85b77c846ba5600,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.05
+      value: 3.11
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 677e57b1b0d7a6b4b85b77c846ba5600,
         type: 3}
@@ -2034,6 +2039,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: act_table
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3a62cdebfc4d74706ae053e4b45a3d0b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3a62cdebfc4d74706ae053e4b45a3d0b,
         type: 3}
@@ -3138,6 +3148,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: activator table ver1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3a62cdebfc4d74706ae053e4b45a3d0b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3a62cdebfc4d74706ae053e4b45a3d0b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3325,7 +3340,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1149573690
 Transform:
@@ -4141,6 +4156,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 9165352353147858637, guid: b3bbab1523c32254f9f6dcece63427ed,
+        type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 774891672999664852, guid: b3bbab1523c32254f9f6dcece63427ed,
         type: 3}
       propertyPath: m_Enabled
@@ -4150,11 +4170,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9165352353147858637, guid: b3bbab1523c32254f9f6dcece63427ed,
-        type: 3}
-      propertyPath: EmissionModule.enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3bbab1523c32254f9f6dcece63427ed, type: 3}
@@ -4187,6 +4202,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: act_table
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3a62cdebfc4d74706ae053e4b45a3d0b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3a62cdebfc4d74706ae053e4b45a3d0b,
         type: 3}
@@ -4961,18 +4981,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a4800bbeb72034985fee15a4ade1f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1543271026 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7760974084778525563, guid: 4806a75ce8070d145a7b8f01ac744092,
-    type: 3}
-  m_PrefabInstance: {fileID: 850410944}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 910f52004ef5f0442b9a1b249de2aea1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1602168035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5103,7 +5111,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1661082056
 Transform:
@@ -5523,6 +5531,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 9165352353147858637, guid: b3bbab1523c32254f9f6dcece63427ed,
+        type: 3}
+      propertyPath: ShapeModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165352353147858637, guid: b3bbab1523c32254f9f6dcece63427ed,
+        type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 774891672999664852, guid: b3bbab1523c32254f9f6dcece63427ed,
         type: 3}
       propertyPath: m_Enabled
@@ -5537,16 +5555,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9165352353147858637, guid: b3bbab1523c32254f9f6dcece63427ed,
-        type: 3}
-      propertyPath: ShapeModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9165352353147858637, guid: b3bbab1523c32254f9f6dcece63427ed,
-        type: 3}
-      propertyPath: EmissionModule.enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6059199673079170524, guid: b3bbab1523c32254f9f6dcece63427ed,
         type: 3}

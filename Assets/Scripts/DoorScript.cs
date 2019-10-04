@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DoorScript : MonoBehaviour
 {
+    public bool shouldMove = true;
     public float doorSpeed;
     Animator anim;
     public AudioSource openSound;
@@ -19,6 +20,7 @@ public class DoorScript : MonoBehaviour
     {
         isOpen = false;
         isFirstClose = true;
+        shouldMove = true;
          
         anim = GetComponent<Animator>();
        // anim.enabled = false;
@@ -38,7 +40,6 @@ public class DoorScript : MonoBehaviour
     {
         
         
-        /*
         // Simple user controlled opening and closing of the door.
         if(Input.GetKeyDown("b"))
         {
@@ -52,15 +53,19 @@ public class DoorScript : MonoBehaviour
             }
         }
         
-        */
         
         if(isOpen)
         {
             rb.velocity = (openPos - rb.position).normalized * doorSpeed;
         }
-        else if (!isOpen)
+        else if (!isOpen && shouldMove)
         {
             rb.velocity = (closedPos - rb.position).normalized * doorSpeed;
+        }
+        else if(!shouldMove)
+        {
+            rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+            Debug.Log("We shouldn't be moving!!!");
         }
         
         /*

@@ -26,7 +26,7 @@ public class BeingHeld : MonoBehaviour
     {
         if(this.gameObject.tag == "Liftable")
         {
-            this.gameObject.layer = GameObject.Find("Player").layer;
+            this.gameObject.layer = GameObject.FindWithTag("Player").layer;
         }
         // Find the vector from where the object is to where the hand is.
         handPoint = hand.position;

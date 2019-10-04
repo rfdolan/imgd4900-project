@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 7760974086199762681}
   m_Layer: 0
   m_Name: FinalDoor
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 4427647926781077530}
   m_Layer: 9
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -231,6 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 910f52004ef5f0442b9a1b249de2aea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldMove: 1
   doorSpeed: 4
   openSound: {fileID: 7760974086269392706}
   closeSound: {fileID: 7760974086269392705}

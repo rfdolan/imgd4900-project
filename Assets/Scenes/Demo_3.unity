@@ -2197,7 +2197,7 @@ PrefabInstance:
     - target: {fileID: 6059199673235762986, guid: b3bbab1523c32254f9f6dcece63427ed,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6059199673235762986, guid: b3bbab1523c32254f9f6dcece63427ed,
         type: 3}
@@ -2304,7 +2304,7 @@ Transform:
   - {fileID: 729166132}
   - {fileID: 1951896204}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &753367504
 PrefabInstance:
@@ -2412,6 +2412,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1827858782}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &773719047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773719046}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c9f091e90506e34bb6e495e667f166a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holdDistance: 0.25
+  tempParent: {fileID: 1152443374}
+  isHolding: 0
 --- !u!1 &778989936
 GameObject:
   m_ObjectHideFlags: 0
@@ -3019,7 +3034,7 @@ Transform:
   - {fileID: 1992391911}
   - {fileID: 850410945}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &988830289
 PrefabInstance:
@@ -3414,7 +3429,7 @@ PrefabInstance:
     - target: {fileID: 7568334737557767162, guid: f62b91b4bbe5f7044b0d46f71b79f91b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7568334737557767162, guid: f62b91b4bbe5f7044b0d46f71b79f91b,
         type: 3}
@@ -3455,6 +3470,11 @@ PrefabInstance:
         type: 3}
       propertyPath: handsFull
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568334737557767045, guid: f62b91b4bbe5f7044b0d46f71b79f91b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7568334737963934463, guid: f62b91b4bbe5f7044b0d46f71b79f91b,
         type: 3}
@@ -5013,7 +5033,7 @@ BoxCollider:
   m_GameObject: {fileID: 1555785480}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2.6000013, y: 3.0000012, z: 2.5500014}
   m_Center: {x: -0.60408103, y: -1.4667569, z: 1.2750006}
@@ -5485,7 +5505,7 @@ PrefabInstance:
     - target: {fileID: 6059199673235762986, guid: b3bbab1523c32254f9f6dcece63427ed,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6059199673235762986, guid: b3bbab1523c32254f9f6dcece63427ed,
         type: 3}
@@ -5532,6 +5552,11 @@ PrefabInstance:
       propertyPath: parentScript
       value: 
       objectReference: {fileID: 1523343066}
+    - target: {fileID: -3000675654035824047, guid: b3bbab1523c32254f9f6dcece63427ed,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6059199673235762980, guid: b3bbab1523c32254f9f6dcece63427ed,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5623,6 +5648,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 13400000, guid: 62859501f901f4bdda49073cf37c7b01,
         type: 2}
+    - target: {fileID: 6059199673235762985, guid: b3bbab1523c32254f9f6dcece63427ed,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3bbab1523c32254f9f6dcece63427ed, type: 3}
 --- !u!1001 &1905921221
@@ -5984,7 +6014,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 935c77af172084f08b88707113a709ab,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 935c77af172084f08b88707113a709ab,
         type: 3}

@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         footfall = GetComponent<AudioSource>();
 
-        dimensionScript = GameObject.Find("Player").GetComponent<DimensionSwap>(); //get dimension script
+        dimensionScript = GameObject.FindWithTag("Player").GetComponent<DimensionSwap>(); //get dimension script
         //lightScript = GameObject.Find("Player").GetComponent<Lights>();
         dimension = 1; //we start in the humna dimension
 

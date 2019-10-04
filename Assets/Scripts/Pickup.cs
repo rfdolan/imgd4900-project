@@ -14,7 +14,7 @@ public class Pickup : MonoBehaviour
     private GameObject objectSeen = null;
     private Material objectSeenMat = null;
     public Transform heldTransform;
-    public float yeetSpeed;
+    //public float yeetSpeed;
 
     void Start() 
     {
@@ -113,7 +113,7 @@ public class Pickup : MonoBehaviour
         //Debug.Log("Drop it mr);
         handsFull = !handsFull;
         heldGameObject.GetComponent<BeingHeld>().enabled = false;
-        heldGameObject.GetComponent<Rigidbody>().velocity = heldGameObject.GetComponent<Rigidbody>().velocity.normalized * yeetSpeed;
+        //heldGameObject.GetComponent<Rigidbody>().velocity = heldGameObject.GetComponent<Rigidbody>().velocity.normalized * yeetSpeed;
         if(heldTransform.tag == "Cube")
         {
             heldTransform = null;

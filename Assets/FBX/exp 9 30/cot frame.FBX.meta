@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: bed frame
     second: {fileID: 2100000, guid: af2a4f902b00b43e09de68792056fe98, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: metal_seamless_by_hhh316-d4p6v71
+    second: {fileID: 2800000, guid: 811346b00ce68bb42aed368f0bd60744, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

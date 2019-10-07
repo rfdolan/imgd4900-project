@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: bed texture
     second: {fileID: 2100000, guid: efa9c1f5bdb4a4ba1b776acca38ce4e0, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 527915572edceaf4a8c4702d45585abc
+    second: {fileID: 2800000, guid: d55e05abc8d8ba946a929cafc69059ba, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

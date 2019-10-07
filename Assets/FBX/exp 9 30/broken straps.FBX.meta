@@ -3,7 +3,17 @@ guid: f9c86b3bc2ad44e759d59ecb53301c24
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: strap texture
+    second: {fileID: 2100000, guid: 35d930741604e754094812e8eac3fd68, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: battleship_blue_upholstery_fabric_background_texture_seamless
+    second: {fileID: 2800000, guid: 69604d2b652547e419dc50aa5736e738, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

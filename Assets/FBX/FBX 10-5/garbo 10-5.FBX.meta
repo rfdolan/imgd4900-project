@@ -41,17 +41,17 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: garbo unwrapped-TM_u0_v0
-    second: {fileID: 2800000, guid: 1295bd69595444544bb437a1e8f87824, type: 3}
+    second: {fileID: 2800000, guid: 83eee9632784e034fa0671f0762d4aac, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: glove 3-NM_u0_v0
-    second: {fileID: 2800000, guid: 659276d52708f904dad1c97abec2076a, type: 3}
+    second: {fileID: 2800000, guid: ccb2a3d6d46e80143866bdceb987346d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: glove 3-TM_u0_v0
-    second: {fileID: 2800000, guid: 1f6287f38fbcc77439d7e308581a5d2c, type: 3}
+    second: {fileID: 2800000, guid: d5b536bb34c69194f8b21cc734c66d64, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

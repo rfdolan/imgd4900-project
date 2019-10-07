@@ -9,11 +9,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: tools
     second: {fileID: 2100000, guid: 5af7ea9b817cdae4ab900a9dd40a33dc, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: metal_seamless_by_hhh316-d4p6v71
-    second: {fileID: 2800000, guid: 156a1f8657b997e4090b4548b886efd3, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
@@ -54,7 +49,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1

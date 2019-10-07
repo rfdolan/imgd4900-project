@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: keyboard mouse
     second: {fileID: 2100000, guid: 0721ad419b0d2446a9155485d92ed3dc, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: dark-metal-textures-widescreen
+    second: {fileID: 2800000, guid: c8eb1092e03edd64093d10032b527994, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

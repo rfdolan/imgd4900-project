@@ -26,18 +26,18 @@ public class DoorBlock : MonoBehaviour
     {
         if(other.gameObject.tag == "Door" && collidingWith[0] == null)
         {
-            Debug.Log("Adding door to the list");
+            //Debug.Log("Adding door to the list");
             collidingWith[0] = other.gameObject;
         }
         if(other.gameObject.tag == "Wall" && collidingWith[1] == null)
         {
-            Debug.Log("Adding wall to the list");
+            //Debug.Log("Adding wall to the list");
             collidingWith[1] = other.gameObject;
 
         }
         if(collidingWith[0] != null && collidingWith[1] != null)
         {
-            Debug.Log("This door should stop moving!");
+            //Debug.Log("This door should stop moving!");
             collidingWith[0].GetComponent<DoorScript>().shouldMove = false;
         }
 
@@ -47,7 +47,7 @@ public class DoorBlock : MonoBehaviour
     {
         if(other.gameObject.tag == "Door" )
         {
-            Debug.Log("Leaving collision with door");
+            //Debug.Log("Leaving collision with door");
             if(collidingWith[0] != null)
             {
                 collidingWith[0].GetComponent<DoorScript>().shouldMove = true;
@@ -56,7 +56,7 @@ public class DoorBlock : MonoBehaviour
         }
         if(other.gameObject.tag == "Wall" && collidingWith[1] != null)
         {
-            Debug.Log("Leaving collision with wall");
+            //Debug.Log("Leaving collision with wall");
             if(collidingWith[0] != null)
             {
                 collidingWith[0].GetComponent<DoorScript>().shouldMove = true;

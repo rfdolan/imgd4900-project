@@ -6,7 +6,352 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 07 - Default
+    second: {fileID: 2100000, guid: 2caded73e76bb23428541c4316b394df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 14 - Default
+    second: {fileID: 2100000, guid: 682eb1c14f5e93a45ae3f412a0d29be4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 16 - Default
+    second: {fileID: 2100000, guid: cc4aa19b9ccbf9146b2c71a0860ca88a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 18 - Default
+    second: {fileID: 2100000, guid: 4dc7ea3c36e201147ae15fd6f265952f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 21 - Default
+    second: {fileID: 2100000, guid: 09b9f2ee98f634c49b0cfc836d49391a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 23 - Default
+    second: {fileID: 2100000, guid: 8b26783cd9d8d3b4ea80b241d0ecf86a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 24 - Default
+    second: {fileID: 2100000, guid: 5bdd3a5e93aa5ee4680c711025f987b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: f82d15c5d05b31840b7c38597ebb83e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walls
+    second: {fileID: 2100000, guid: 097633f17d2010a4886abeab5b160ffc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bed frame
+    second: {fileID: 2100000, guid: 0dee5a1056910554c92a690b1f8edde3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bed texture
+    second: {fileID: 2100000, guid: bee984995ef52a44ab79ce7c602d8bcd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blood hand
+    second: {fileID: 2100000, guid: 59a1b7630569c184ca81ee6adbb6d90f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blood pool 2
+    second: {fileID: 2100000, guid: 9904b82a3cee0b141a244f01246071a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blood pooling
+    second: {fileID: 2100000, guid: 2509dad76a1a11440bf0832d6f74a13d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body blood
+    second: {fileID: 2100000, guid: 366bc47ec95830541b62f32b45e9af5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cage material
+    second: {fileID: 2100000, guid: eb799221d9467a34c87b2d132a636baf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chair seat
+    second: {fileID: 2100000, guid: c9df2e2d20ef7db45883c669c7425e15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: comp front
+    second: {fileID: 2100000, guid: ad3516b926391094dbcce5800a1f947b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: crate
+    second: {fileID: 2100000, guid: c94c36174e1103a44b37429f9069d693, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: creepy liquid 01
+    second: {fileID: 2100000, guid: 3b115f677d3db8643bf5ecba25514eb6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: creepy liquid 02
+    second: {fileID: 2100000, guid: 36edc3d6a7782634689e6049c15467d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: creepy liquid 03
+    second: {fileID: 2100000, guid: 061db396b701f424eb4b6cf81f15929a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: creepy liquid 04
+    second: {fileID: 2100000, guid: be4ad2c6156650545a0185e7fb4ad4c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: creepy liquid 05
+    second: {fileID: 2100000, guid: 0fb8b97d6f816fc41b25ad57ada5212e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: creepy liquid 06
+    second: {fileID: 2100000, guid: 145dc9a468bcd5043815aa4f387b87de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: desk metal
+    second: {fileID: 2100000, guid: fd4683bcd83072e4ca74e51c1a52a7e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: desk wood
+    second: {fileID: 2100000, guid: 1409d2462cdefd345aceac4fc7ace806, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door
+    second: {fileID: 2100000, guid: 54089652b7868d144bf97bb54edfc1ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door 1
+    second: {fileID: 2100000, guid: 09143ae136872fd45b228301c1566c2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door 2
+    second: {fileID: 2100000, guid: 4adb36b4bacbd6341b85e9a5a47a43a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door 3
+    second: {fileID: 2100000, guid: cd4409f8b73b55649aa576881925dbd8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door frame
+    second: {fileID: 2100000, guid: 071a34687408ee440bd086d890cfbc41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door glass
+    second: {fileID: 2100000, guid: b1ec86d03d0f6cc4c9e9daf9c9e8c803, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: get out plane
+    second: {fileID: 2100000, guid: 50109ea8954322a479a3eea8bfd62315, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ground
+    second: {fileID: 2100000, guid: cc6595da71a923e4180588bd6d231ef0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: keyboard mouse
+    second: {fileID: 2100000, guid: ba846c138107fdc4d9ce3fb92b330162, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: left foot
+    second: {fileID: 2100000, guid: 96578c9a46a3f124d92b5fa65a95f647, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: right foot print
+    second: {fileID: 2100000, guid: 167b4d55d6da5ee478aa7e446b83fda6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: seat metal
+    second: {fileID: 2100000, guid: 57a441e686bb102468cde0ca0f66da98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: strap texture
+    second: {fileID: 2100000, guid: 244711780a8f367408f3201abaaed649, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: table for tools
+    second: {fileID: 2100000, guid: 528db48c337f63d4b9df406be0409a62, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: test tube glass
+    second: {fileID: 2100000, guid: fd85ce7eba99b574db797eaec25927f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tools
+    second: {fileID: 2100000, guid: 9ee2d9a7884fa214b9e30ec76097a224, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trash
+    second: {fileID: 2100000, guid: d0969b94a9c140240abaf19b9807e216, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tray
+    second: {fileID: 2100000, guid: 81cfbef634c0ee74ab1d290146f63e34, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 0088-dark-raw-wood-texture-seamless-hr
+    second: {fileID: 2800000, guid: 5f910b9f4401f2046999317363082d28, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 527915572edceaf4a8c4702d45585abc
+    second: {fileID: 2800000, guid: 3cce87cead245ae4aaabcd7cd08c59cc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 7650b257d59c072f34d09c4cd0e22e22
+    second: {fileID: 2800000, guid: 578f2f2ec9285494d8ddebc6ecdf3098, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 80617230-close-up-of-a-brown-leather-texture-seamless-square-background-tile-ready-high-resolution-photo-
+    second: {fileID: 2800000, guid: c3a1c027f4454c84d847ebe4aeb51eea, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Layer 8
+    second: {fileID: 2800000, guid: db2223baefb36524abff0cfda469c0e9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wood-Textures-1
+    second: {fileID: 2800000, guid: 88ec63ebcd621064da2c9bd0463ed31c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: battleship_blue_upholstery_fabric_background_texture_seamless
+    second: {fileID: 2800000, guid: 767341891e20e7048855d5f4ec4a47cb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: blood
+    second: {fileID: 2800000, guid: 88619a983660ac64990ca7f36709fd40, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: blood 3
+    second: {fileID: 2800000, guid: 164c76381e92062429583f636a9e3955, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: blood 4
+    second: {fileID: 2800000, guid: 261dded76c8d8fe4786fa04a67ebd45b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: blood 7
+    second: {fileID: 2800000, guid: 85e2f03ae3ed7594e8c1621665b61822, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bloody hand
+    second: {fileID: 2800000, guid: 8b336744382e2ad40987395d40375b9d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: body imprint
+    second: {fileID: 2800000, guid: abb143c3c5faa334b81adeb1eb70e5c8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: crate texture
+    second: {fileID: 2800000, guid: 9ba233a246c3e394687ba93d4aa974d5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: dark-metal-textures-widescreen
+    second: {fileID: 2800000, guid: 01af776e11b54b24faa60e3abbda0ce0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: download
+    second: {fileID: 2800000, guid: 058931b3922cb2b44b3a20d3fad3249b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: get out bw1a
+    second: {fileID: 2800000, guid: b66b5dc9c07aeb642857a1340d0c7fab, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: hand flippo
+    second: {fileID: 2800000, guid: 719ade885821c204dbfc26e3a5ca4b74, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: left foot
+    second: {fileID: 2800000, guid: 429494ce8aafd8642a56971d5fef085b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: metal_seamless_by_hhh316-d4p6v71
+    second: {fileID: 2800000, guid: b97b012df64e33b4298757821ceaae98, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: paneling
+    second: {fileID: 2800000, guid: e1611e985808ec04da19bb2c7a6ef146, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plastic_0068_01_preview
+    second: {fileID: 2800000, guid: b0e5def29426d764a8952f44a78a1d2c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: right foot
+    second: {fileID: 2800000, guid: 306ea3cd1b5aac64f85ee3246defee28, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: seamless-metal-plate-pattern
+    second: {fileID: 2800000, guid: 646f2d2a0cae41f46b05e36b94ce9bbe, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

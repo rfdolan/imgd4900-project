@@ -12,6 +12,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: cage material
     second: {fileID: 2100000, guid: d8c70d278a2424787aaf18cfe6f1c533, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: download
+    second: {fileID: 2800000, guid: ac8c18d82f9196b4097173fd6cddaa4d, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

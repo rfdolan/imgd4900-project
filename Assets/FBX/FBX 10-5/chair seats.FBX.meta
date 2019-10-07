@@ -6,7 +6,17 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chair seat
+    second: {fileID: 2100000, guid: c9df2e2d20ef7db45883c669c7425e15, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 80617230-close-up-of-a-brown-leather-texture-seamless-square-background-tile-ready-high-resolution-photo-
+    second: {fileID: 2800000, guid: 41e25cb6a02ff3a4ebb27718c540bf73, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

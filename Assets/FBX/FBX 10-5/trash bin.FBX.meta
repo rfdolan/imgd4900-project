@@ -6,7 +6,17 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trash
+    second: {fileID: 2100000, guid: d0969b94a9c140240abaf19b9807e216, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plastic_0068_01_preview
+    second: {fileID: 2800000, guid: 8c9216d1e18ae9f488605af4dccf01ba, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

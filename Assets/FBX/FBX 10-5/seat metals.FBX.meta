@@ -6,7 +6,17 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: seat metal
+    second: {fileID: 2100000, guid: 57a441e686bb102468cde0ca0f66da98, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: dark-metal-textures-widescreen
+    second: {fileID: 2800000, guid: 868901a2a5d5f9f49bfa91f2e3418ed7, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

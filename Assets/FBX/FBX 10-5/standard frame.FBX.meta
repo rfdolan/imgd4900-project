@@ -6,7 +6,17 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door frame
+    second: {fileID: 2100000, guid: 071a34687408ee440bd086d890cfbc41, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plastic_0068_01_preview
+    second: {fileID: 2800000, guid: ba9b610ade31123458541e6480a9bc8a, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

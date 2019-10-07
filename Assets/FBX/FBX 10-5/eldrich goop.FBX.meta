@@ -3,7 +3,17 @@ guid: 0f018dacbaff4fb46a465580a5fea3f0
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 14 - Default
+    second: {fileID: 2100000, guid: 682eb1c14f5e93a45ae3f412a0d29be4, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: blood 4
+    second: {fileID: 2800000, guid: 431d78308a239c04e8df4cdfa0019b77, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

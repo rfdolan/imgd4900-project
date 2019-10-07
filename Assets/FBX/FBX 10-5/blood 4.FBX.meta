@@ -3,7 +3,17 @@ guid: bdee5794a38e12c4caa8c5785c657044
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blood pool 2
+    second: {fileID: 2100000, guid: d421814f20f14cf4eba268b1662e7cc7, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: hand flippo
+    second: {fileID: 2800000, guid: 61c91f0f37c9bfc4f87aa9d4d09d0a78, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

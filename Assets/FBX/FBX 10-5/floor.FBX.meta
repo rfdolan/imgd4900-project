@@ -6,7 +6,17 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ground
+    second: {fileID: 2100000, guid: c6181dbd5d29c3c4ea64c55d53ccb89a, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Layer 8
+    second: {fileID: 2800000, guid: d500b2e9d46b66b49a4816e6dca572b7, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

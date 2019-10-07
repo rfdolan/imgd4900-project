@@ -6,7 +6,52 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GLOVE MAP
+    second: {fileID: 2100000, guid: d260db79b47b35e4389de8e98a03e1b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: garbomap
+    second: {fileID: 2100000, guid: c2de21b8af2ee6442bbd902dee8312b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: leather straps
+    second: {fileID: 2100000, guid: fc644f1cb03df174b8c0e9970ab9a32c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: left stone
+    second: {fileID: 2100000, guid: d1bb69dc682f9b7488b3214dbe881cf7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pointer stone
+    second: {fileID: 2100000, guid: ad35ba3daac58c94eb848462cf8160ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: right stone
+    second: {fileID: 2100000, guid: b161d3c929fc8bf49bb028d54ca66b82, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: garbo unwrapped-TM_u0_v0
+    second: {fileID: 2800000, guid: 1295bd69595444544bb437a1e8f87824, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: glove 3-NM_u0_v0
+    second: {fileID: 2800000, guid: 659276d52708f904dad1c97abec2076a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: glove 3-TM_u0_v0
+    second: {fileID: 2800000, guid: 1f6287f38fbcc77439d7e308581a5d2c, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

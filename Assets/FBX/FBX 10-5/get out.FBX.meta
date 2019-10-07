@@ -3,7 +3,17 @@ guid: 9bde7547d46ca8f4f8cb8790400194ec
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: get out plane
+    second: {fileID: 2100000, guid: 50109ea8954322a479a3eea8bfd62315, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: get out bw1a
+    second: {fileID: 2800000, guid: 8d4e3f892823c7f4fae9662c7cbaa864, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

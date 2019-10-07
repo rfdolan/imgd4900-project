@@ -6,7 +6,17 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door glass
+    second: {fileID: 2100000, guid: b1ec86d03d0f6cc4c9e9daf9c9e8c803, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 7650b257d59c072f34d09c4cd0e22e22
+    second: {fileID: 2800000, guid: bb5189b5217fcd342a23a77748894b4a, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

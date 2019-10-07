@@ -6,7 +6,17 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 23 - Default
+    second: {fileID: 2100000, guid: 8b26783cd9d8d3b4ea80b241d0ecf86a, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: dark-metal-textures-widescreen
+    second: {fileID: 2800000, guid: 614f881c0248c8e47a0207d7fb9817f0, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

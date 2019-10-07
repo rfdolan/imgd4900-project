@@ -6,7 +6,17 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: table for tools
+    second: {fileID: 2100000, guid: 528db48c337f63d4b9df406be0409a62, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 0088-dark-raw-wood-texture-seamless-hr
+    second: {fileID: 2800000, guid: e378366cb3c8dec4abc11c7616ea26cd, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

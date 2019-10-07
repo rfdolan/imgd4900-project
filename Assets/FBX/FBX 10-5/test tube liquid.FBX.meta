@@ -3,7 +3,37 @@ guid: b909d56803caedd4e8e61da47569e296
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: creepy liquid 01
+    second: {fileID: 2100000, guid: 52ef6291c09ba644da94900d258ed42d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: creepy liquid 02
+    second: {fileID: 2100000, guid: 178e5e864dd16464bb4d17e4a5edfdc1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: creepy liquid 03
+    second: {fileID: 2100000, guid: 28a2870034d600944bda6d9d038abc4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: creepy liquid 04
+    second: {fileID: 2100000, guid: b9fedb55637a722409159de7a9a62c8f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: creepy liquid 05
+    second: {fileID: 2100000, guid: c950238ddc8afc2429ad1bb5507e704d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: creepy liquid 06
+    second: {fileID: 2100000, guid: 8af31fc7ad0951a4eaccf3a2e8ea0d55, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

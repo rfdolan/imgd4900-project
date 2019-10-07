@@ -3,7 +3,12 @@ guid: 958bfb38581bdc9408e69040853df8c9
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: test tube glass
+    second: {fileID: 2100000, guid: fd85ce7eba99b574db797eaec25927f5, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

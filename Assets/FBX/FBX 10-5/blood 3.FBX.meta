@@ -3,7 +3,17 @@ guid: 6f62ba8dc77506d46a83331b04ca6c2b
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blood hand
+    second: {fileID: 2100000, guid: f482605aefe88654185a83ed4380ec1e, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bloody hand
+    second: {fileID: 2800000, guid: 9618cb605aa0cc349a77ad6347f72246, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

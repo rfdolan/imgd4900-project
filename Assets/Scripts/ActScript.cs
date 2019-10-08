@@ -18,6 +18,7 @@ public class ActScript : MonoBehaviour
             return;
         }
         GameObject hitObj = other.transform.gameObject;
+       
         
         // If the object that we are hitting is the correct activator, grab it.
         if(hitObj == Activator)

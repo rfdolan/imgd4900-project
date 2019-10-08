@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 1401200889}
   - component: {fileID: 1401200890}
   - component: {fileID: 1401200891}
+  - component: {fileID: 1401200892}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -425,6 +426,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc3fffdcd037d6e48ab6745facd6f70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1401200892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401200885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8ee32b1dba6bb24aa27a48adc49bcbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1571935509
@@ -689,10 +702,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScaleFactor: 2.4
+  m_ReferenceResolution: {x: 600, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

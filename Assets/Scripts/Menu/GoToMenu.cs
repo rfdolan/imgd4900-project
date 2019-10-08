@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ShowControls : MonoBehaviour
+public class GoToMenu : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,10 +14,10 @@ public class ShowControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+          SceneManager.LoadScene("Menu");
+        }
         
-    }
-    public void OnMouseDown()
-    {
-        SceneManager.LoadScene("Controls");
     }
 }

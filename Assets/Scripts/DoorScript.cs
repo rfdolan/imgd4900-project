@@ -39,7 +39,7 @@ public class DoorScript : MonoBehaviour
     void Update()
     {
         
-        
+       /* 
         // Simple user controlled opening and closing of the door.
         if(Input.GetKeyDown("b"))
         {
@@ -52,6 +52,7 @@ public class DoorScript : MonoBehaviour
                 OpenDoor();
             }
         }
+        */
         
         
         if(isOpen)

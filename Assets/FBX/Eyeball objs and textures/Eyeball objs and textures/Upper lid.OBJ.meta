@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 779781b2a63754c818c4ce80b841152e
+guid: ba296a792feadd848a5500a20a418cd2
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: door 2
-    second: {fileID: 2100000, guid: a4796f864a07b1949a332461d0184b36, type: 2}
+      name: Group17476Mat
+    second: {fileID: 2100000, guid: d4bf940de9a2e36409358987e76aa5cb, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -49,7 +49,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1

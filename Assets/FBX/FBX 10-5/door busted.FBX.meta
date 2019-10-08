@@ -16,7 +16,7 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Wood-Textures-1
-    second: {fileID: 2800000, guid: ad113b85f0186a84ea887deed48ddbeb, type: 3}
+    second: {fileID: 2800000, guid: 63c527a215877ea4da9dc27e6279aabe, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

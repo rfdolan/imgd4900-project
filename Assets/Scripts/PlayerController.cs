@@ -39,10 +39,10 @@ public class PlayerController : MonoBehaviour
         //load objects
         forHuman = dimensionScript.humanObjects.GetComponentInChildren<Transform>();
         forOther = dimensionScript.otherObjects.GetComponentInChildren<Transform>();
-        /*
+        
         ActivateDim(forHuman);
         DeactivateDim(forOther);
-        */
+        
         //make sure light is right color 
         //lightChildren = lightScript.lightParent.GetComponentsInChildren<Light>(true);
        // lightScript.changeToHuman(lightChildren);
@@ -87,10 +87,12 @@ public class PlayerController : MonoBehaviour
         //for changing dimensions 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(!changeSound.isPlaying)
+            if(changeSound.isPlaying)
             {
-                changeSound.Play(0);
+                return;
             }
+            changeSound.Play(0);
+            animator.SetTrigger("shifting");
             //get list of game objects for each dimension
             forHuman = dimensionScript.humanObjects.GetComponentInChildren<Transform>();
             forOther = dimensionScript.otherObjects.GetComponentInChildren<Transform>();
@@ -149,11 +151,21 @@ public class PlayerController : MonoBehaviour
             if(child.gameObject.GetComponent<MeshRenderer>() == null && child.childCount > 0) { // if the child has children of its own
                 //Debug.Log("passed");
                 foreach(Transform childsChild in child) {
-                    //Debug.Log("passed #2");
-                    //Transform childsChild = child[i]
-                    if ( childsChild.gameObject.GetComponent<MeshRenderer>() != null ) { // if the childs child has a mesh
-                        //Debug.Log("passed #3");
-                        makeOpaque( childsChild );
+                    if(childsChild.childCount > 0) { // if the child has children of its own
+                        foreach(Transform childsChildsChild in childsChild)
+                        {
+
+                            if ( childsChild.gameObject.GetComponent<MeshRenderer>() != null ) { // if the childs child has a mesh
+                                //Debug.Log("passed #3");
+                                makeOpaque(childsChildsChild);
+                                //break;
+                            }
+                        }
+                    }
+                    if (childsChild.gameObject.GetComponent<MeshRenderer>() != null)
+                    {
+                        makeOpaque(childsChild);
+
                     }
                 }
             }
@@ -192,10 +204,21 @@ public class PlayerController : MonoBehaviour
                 foreach(Transform childsChild in child) {
                     //Debug.Log("passed #2");
                     //Transform childsChild = child[i];
-                    if ( childsChild.gameObject.GetComponent<MeshRenderer>() != null ) { // if the childs child has a mesh
-                    //Debug.Log("passed #3");
+                    if(childsChild.childCount > 0) { // if the child has children of its own
+                        foreach(Transform childsChildsChild in childsChild)
+                        {
+
+                            if ( childsChild.gameObject.GetComponent<MeshRenderer>() != null ) { // if the childs child has a mesh
+                                //Debug.Log("passed #3");
+                                makeTransparent(childsChildsChild);
+                                //break;
+                            }
+                        }
+                    }
+                    if (childsChild.gameObject.GetComponent<MeshRenderer>() != null)
+                    {
                         makeTransparent(childsChild);
-                        //break;
+
                     }
                 }
             }

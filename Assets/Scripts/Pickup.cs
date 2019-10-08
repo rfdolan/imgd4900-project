@@ -14,6 +14,7 @@ public class Pickup : MonoBehaviour
     private GameObject objectSeen = null;
     private Material objectSeenMat = null;
     public Transform heldTransform;
+    public Animator animator;
     //public float yeetSpeed;
 
     void Start() 
@@ -31,6 +32,7 @@ public class Pickup : MonoBehaviour
         {
             if(handsFull)
             {
+                animator.SetTrigger("pickingUp");
                 dropObject();
                 return;
             }
@@ -87,6 +89,7 @@ public class Pickup : MonoBehaviour
     }
     private void liftObject(Transform objHit)
     {
+        animator.SetTrigger("pickingUp");
         UnHighlight();
         heldTransform = objHit;
         

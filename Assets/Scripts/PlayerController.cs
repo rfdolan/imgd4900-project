@@ -293,5 +293,9 @@ public class PlayerController : MonoBehaviour
         Vector3 poushDir = new Vector3(hit.moveDirection.x,0,hit.moveDirection.z);
         body.velocity = poushDir * pushPower;
     }
+    void OnDisable()
+    {
+        animator.SetBool("isWalking", false);
+    }
 }
 

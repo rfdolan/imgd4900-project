@@ -15,4 +15,16 @@ public class EndingTrigger : MonoBehaviour
     {
         
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            Debug.Log("Hit the player!");
+            other.gameObject.GetComponent<EndingScript>().enabled = true;
+            this.gameObject.SetActive(false);
+        }
+
+
+    }
 }

@@ -135,27 +135,4 @@ public class Pickup : MonoBehaviour
         
 
     }
-    //TODO Fix this because we aren't clicking the player
-    private void OnMouseDown()
-    {
-
-        // Create the ray and raycast that we are going to use
-        RaycastHit hit;
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        Ray highlightRay = cam.ScreenPointToRay(Input.mousePosition);
-        if(handsFull)
-        {
-            dropObject();
-            return;
-        }
-        // See if it hit. To change the range, change the last number.
-        else if (Physics.Raycast(ray, out hit, 2)&&(hit.transform.gameObject.layer == this.gameObject.layer) ){
-            Transform objectHit = hit.transform;
-            //Debug.Log("We hit "+ objectHit);
-            if(objectHit.tag == "Liftable" || objectHit.tag == "Non-Transferrable" || objectHit.tag == "Cube")
-            {
-                liftObject(objectHit);
-            }
-        }
-    }
 }

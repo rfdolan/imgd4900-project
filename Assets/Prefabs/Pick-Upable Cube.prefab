@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 687727127965610422}
   - component: {fileID: 3193409575053464664}
   - component: {fileID: 3193409575053464665}
+  - component: {fileID: -549722396415457586}
+  - component: {fileID: 7119319937825428938}
   m_Layer: 0
   m_Name: Pick-Upable Cube
   m_TagString: Liftable
@@ -60,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8554655104631171556, guid: 4302a4c113c63463cb63d16b83986205, type: 3}
+  - {fileID: 2100000, guid: 91e55f242fb1a5447ac0d59fac14e0ac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125,3 +127,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-549722396415457586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3193409575053464646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6064480cb2914b8457cb5a8bf1662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7119319937825428938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3193409575053464646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9730847335e2744c93e6a14af87dabb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

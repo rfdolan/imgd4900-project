@@ -14,6 +14,8 @@ public class Pickup : MonoBehaviour
     private GameObject objectSeen = null;
     private Material objectSeenMat = null;
     public Transform heldTransform;
+    public Animator animator;
+    //public float yeetSpeed;
 
     void Start() 
     {
@@ -26,15 +28,16 @@ public class Pickup : MonoBehaviour
         RaycastHit hit;
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         Ray highlightRay = cam.ScreenPointToRay(Input.mousePosition);
-        if(Input.GetKeyDown("e"))
+        if(Input.GetKeyDown("e") || Input.GetMouseButtonDown(0))
         {
             if(handsFull)
             {
+                animator.SetTrigger("pickingUp");
                 dropObject();
                 return;
             }
             // See if it hit. To change the range, change the last number.
-            else if (Physics.Raycast(ray, out hit, 2)) {
+            else if (Physics.Raycast(ray, out hit, 2)&&(hit.transform.gameObject.layer == this.gameObject.layer) ){
                 Transform objectHit = hit.transform;
                 //Debug.Log("We hit "+ objectHit);
                 if(objectHit.tag == "Liftable" || objectHit.tag == "Non-Transferrable" || objectHit.tag == "Cube")
@@ -48,7 +51,7 @@ public class Pickup : MonoBehaviour
         {
             //Debug.Log("There is nothing in my hands.");
             // We are seeing a pick upable object
-            if(Physics.Raycast(highlightRay, out hit, 2) && ((hit.transform.tag == "Liftable" ) || (hit.transform.tag == "Non-Transferrable") || (hit.transform.tag == "Cube")))
+            if(Physics.Raycast(highlightRay, out hit, 2) && (hit.transform.gameObject.layer == this.gameObject.layer) && ((hit.transform.tag == "Liftable" ) || (hit.transform.tag == "Non-Transferrable") || (hit.transform.tag == "Cube")))
             {
                 if(objectSeen == null)
                 {
@@ -86,6 +89,7 @@ public class Pickup : MonoBehaviour
     }
     private void liftObject(Transform objHit)
     {
+        animator.SetTrigger("pickingUp");
         UnHighlight();
         heldTransform = objHit;
         
@@ -112,6 +116,7 @@ public class Pickup : MonoBehaviour
         //Debug.Log("Drop it mr);
         handsFull = !handsFull;
         heldGameObject.GetComponent<BeingHeld>().enabled = false;
+        //heldGameObject.GetComponent<Rigidbody>().velocity = heldGameObject.GetComponent<Rigidbody>().velocity.normalized * yeetSpeed;
         if(heldTransform.tag == "Cube")
         {
             heldTransform = null;

@@ -3,7 +3,17 @@ guid: fd4e07860a5464b2eb365caa427927c5
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: marble
+    second: {fileID: 2100000, guid: 4bd52889b9ae2794791c7d14808096b0, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: marble
+    second: {fileID: 2800000, guid: 1c313c1a905bd014098db0f957949fcf, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
@@ -44,7 +54,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1

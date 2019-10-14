@@ -37,7 +37,7 @@ public class Grabbed : MonoBehaviour
     {
         rb.useGravity = false;
         Vector3 start = targetPoint;
-        start.y = start.y + 1; 
+        start.y = start.y + 0.5f; 
         rb.position = start;
         //Debug.Log("Enabled being held");
 

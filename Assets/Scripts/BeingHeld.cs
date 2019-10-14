@@ -24,6 +24,10 @@ public class BeingHeld : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(this.gameObject.tag == "Liftable")
+        {
+            this.gameObject.layer = GameObject.FindWithTag("Player").layer;
+        }
         // Find the vector from where the object is to where the hand is.
         handPoint = hand.position;
         Vector3 currentPos = this.GetComponent<Transform>().position;

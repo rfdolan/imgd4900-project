@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DoorScript : MonoBehaviour
 {
+    public bool shouldMove = true;
     public float doorSpeed;
     Animator anim;
     public AudioSource openSound;
@@ -12,20 +13,24 @@ public class DoorScript : MonoBehaviour
     private Rigidbody rb;
     private Vector3 openPos;
     private Vector3 closedPos;
+    private bool isFirstClose;
 
     // Start is called before the first frame update
     void Start()
     {
         isOpen = false;
+        isFirstClose = true;
+        shouldMove = true;
          
         anim = GetComponent<Animator>();
        // anim.enabled = false;
        
        rb = GetComponent<Rigidbody>();
-       openPos = rb.position;
-       closedPos = this.gameObject.transform.GetChild(0).transform.position;
+       openPos = this.transform.parent.GetChild(this.transform.GetSiblingIndex() + 2).position;
+       closedPos = this.transform.parent.GetChild(this.transform.GetSiblingIndex() + 1).position;
        // Start with every door open and then close them.
-       Debug.Log(this + "ClosedPos is " + closedPos);
+       //Debug.Log(this + "ClosedPos is " + closedPos);
+       //Debug.Log(this + "OpenPos is " + openPos);
        CloseDoor();
 
     }
@@ -33,7 +38,8 @@ public class DoorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
+        
+       /* 
         // Simple user controlled opening and closing of the door.
         if(Input.GetKeyDown("b"))
         {
@@ -48,6 +54,22 @@ public class DoorScript : MonoBehaviour
         }
         */
         
+        
+        if(isOpen)
+        {
+            rb.velocity = (openPos - rb.position).normalized * doorSpeed;
+        }
+        else if (!isOpen && shouldMove)
+        {
+            rb.velocity = (closedPos - rb.position).normalized * doorSpeed;
+        }
+        else if(!shouldMove)
+        {
+            rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+            Debug.Log("We shouldn't be moving!!!");
+        }
+        
+        /*
         // If the door is going to go too far, stop.
         if(((rb.position.x > openPos.x) && isOpen) || ((rb.position.x < closedPos.x) && !isOpen))
         {
@@ -61,9 +83,9 @@ public class DoorScript : MonoBehaviour
             rb.velocity = target;
 
         }
+        */
         
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -92,7 +114,7 @@ public class DoorScript : MonoBehaviour
 
     private void pauseAnimationEvent()
     {
-        anim.enabled = false;
+        //anim.enabled = false;
     }
 
     /*
@@ -101,13 +123,16 @@ public class DoorScript : MonoBehaviour
     public void OpenDoor()
     {
         //anim.SetTrigger("DoorOpen");
+        
         openSound.Play(0);
         isOpen = true;
+        /*
         Vector3 currentPos = this.GetComponent<Transform>().position;
         Vector3 direction = openPos-currentPos;
         direction = direction.normalized;
         direction *= doorSpeed;
         rb.velocity = direction;
+        */
     }
 
     /*
@@ -115,13 +140,20 @@ public class DoorScript : MonoBehaviour
      */
     public void CloseDoor()
     {
-        closeSound.Play(0);
+        if(!isFirstClose)
+        {
+            closeSound.Play(0);
+            
+        }
         isOpen = false;
+        isFirstClose = false;
+        /*
         Vector3 currentPos = this.GetComponent<Transform>().position;
         Vector3 direction = closedPos-currentPos;
         direction = direction.normalized;
         direction *= doorSpeed;
         rb.velocity = direction;
+        */
 
     }
 }

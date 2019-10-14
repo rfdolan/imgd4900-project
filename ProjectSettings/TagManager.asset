@@ -10,6 +10,8 @@ TagManager:
   - Activatable
   - Non-Transferrable
   - Cube
+  - Door
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -23,9 +25,9 @@ TagManager:
   - Doors
   - Standard Physics Objects
   - Level Geometry
-  - 
-  - 
-  - 
+  - HumanDim
+  - OtherDim
+  - HumanDimDoor
   - 
   - 
   - 
@@ -46,4 +48,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Button
+    uniqueID: 2368136515
     locked: 0
